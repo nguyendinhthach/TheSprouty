@@ -1,0 +1,1495 @@
+fileFormatVersion: 2
+guid: 1641526297e0d8d4886206b6f34aa8c8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 678476010476695772
+    second: tree orange sprites_0
+  - first:
+      213: -6287539523689128609
+    second: tree orange sprites_1
+  - first:
+      213: -8420501990327547917
+    second: tree orange sprites_2
+  - first:
+      213: -1156395735855220153
+    second: tree orange sprites_3
+  - first:
+      213: 8808828512176654757
+    second: tree orange sprites_4
+  - first:
+      213: -2515584890423372887
+    second: tree orange sprites_5
+  - first:
+      213: 8898141008874068754
+    second: tree orange sprites_6
+  - first:
+      213: 1720127977472412889
+    second: tree orange sprites_7
+  - first:
+      213: -3653171147740488886
+    second: tree orange sprites_8
+  - first:
+      213: 5364141930580832399
+    second: tree orange sprites_9
+  - first:
+      213: -8322421545499222633
+    second: tree orange sprites_10
+  - first:
+      213: 2269485196428317036
+    second: tree orange sprites_11
+  - first:
+      213: 3991192916845263341
+    second: tree orange sprites_12
+  - first:
+      213: -4739674521336168745
+    second: tree orange sprites_13
+  - first:
+      213: -4782434347339412333
+    second: tree orange sprites_14
+  - first:
+      213: 1871586791079611660
+    second: tree orange sprites_15
+  - first:
+      213: -5211590776658794084
+    second: tree orange sprites_16
+  - first:
+      213: 3079838577337043545
+    second: tree orange sprites_17
+  - first:
+      213: 3796665070731263188
+    second: tree orange sprites_18
+  - first:
+      213: 2408663973776533740
+    second: tree orange sprites_19
+  - first:
+      213: -5135692483520192764
+    second: tree orange sprites_20
+  - first:
+      213: -5211613611041481504
+    second: tree orange sprites_21
+  - first:
+      213: -7144442734756791510
+    second: tree orange sprites_22
+  - first:
+      213: -4683819852818099634
+    second: tree orange sprites_23
+  - first:
+      213: -5908874618258425094
+    second: tree orange sprites_24
+  - first:
+      213: -3510753251658814126
+    second: tree orange sprites_25
+  - first:
+      213: 1038360899170311033
+    second: tree orange sprites_26
+  - first:
+      213: -8093386098281480917
+    second: tree orange sprites_27
+  - first:
+      213: 6732195060176226624
+    second: tree orange sprites_28
+  - first:
+      213: 228406196196860025
+    second: tree orange sprites_29
+  - first:
+      213: 3760585092600304154
+    second: tree orange sprites_30
+  - first:
+      213: 7980851089597630351
+    second: tree orange sprites_31
+  - first:
+      213: 528979260712621308
+    second: tree orange sprites_32
+  - first:
+      213: 4998919856689375330
+    second: tree orange sprites_33
+  - first:
+      213: -2148084687290718478
+    second: tree orange sprites_34
+  - first:
+      213: -8676677688209254306
+    second: tree orange sprites_35
+  - first:
+      213: -6821918563584693679
+    second: tree orange sprites_36
+  - first:
+      213: 6688282643035041615
+    second: tree orange sprites_37
+  - first:
+      213: -8923133797867908880
+    second: tree orange sprites_38
+  - first:
+      213: 1976638545620276964
+    second: tree orange sprites_39
+  - first:
+      213: -3148834448286141895
+    second: tree orange sprites_40
+  - first:
+      213: -683089414971145089
+    second: tree orange sprites_41
+  - first:
+      213: 3932288115662198446
+    second: tree orange sprites_42
+  - first:
+      213: 3725898692032243343
+    second: tree orange sprites_43
+  - first:
+      213: -8246359745830399377
+    second: tree orange sprites_44
+  - first:
+      213: -8325686668199122224
+    second: tree orange sprites_45
+  - first:
+      213: 6531876049361709731
+    second: tree orange sprites_46
+  - first:
+      213: -4704482870550354244
+    second: tree orange sprites_47
+  - first:
+      213: 285189819389471277
+    second: tree orange sprites_48
+  - first:
+      213: 7872572469736178813
+    second: tree orange sprites_49
+  - first:
+      213: -6992080430866451986
+    second: tree orange sprites_50
+  - first:
+      213: 7502341738088977473
+    second: tree orange sprites_51
+  - first:
+      213: -388192571111887613
+    second: tree orange sprites_52
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tree orange sprites_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 195
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd07619365e6a6900800000000000000
+      internalID: 678476010476695772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 147
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5dd743bd1c2eb8a0800000000000000
+      internalID: -6287539523689128609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_2
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 147
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f78e04bd0e542b80800000000000000
+      internalID: -8420501990327547917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_3
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 147
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ab2908438a3ffe0800000000000000
+      internalID: -1156395735855220153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_4
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 147
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a94f935cde3f3a70800000000000000
+      internalID: 8808828512176654757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 99
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a399fbced8d61dd0800000000000000
+      internalID: -2515584890423372887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_6
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 99
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21b564b6a1c8c7b70800000000000000
+      internalID: 8898141008874068754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_7
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 99
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc4479284f1fd710800000000000000
+      internalID: 1720127977472412889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 99
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4bd83b42345d4dc0800000000000000
+      internalID: -3653171147740488886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_9
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 99
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f807c095aa2417a40800000000000000
+      internalID: 5364141930580832399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_10
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 99
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d167dc2b1d08c80800000000000000
+      internalID: -8322421545499222633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_11
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 51
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c611e1c03c4de7f10800000000000000
+      internalID: 2269485196428317036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_12
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 51
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de9fd96cfc0936730800000000000000
+      internalID: 3991192916845263341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 51
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7deb9cc722b493eb0800000000000000
+      internalID: -4739674521336168745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_14
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 51
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39c053dac4161adb0800000000000000
+      internalID: -4782434347339412333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_15
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 61
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d0d98354639f910800000000000000
+      internalID: 1871586791079611660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_16
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 51
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c99ec820dc5bca7b0800000000000000
+      internalID: -5211590776658794084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_17
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 51
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95a08bf4ed8cdba20800000000000000
+      internalID: 3079838577337043545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_18
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 66
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dcf11824c670b430800000000000000
+      internalID: 3796665070731263188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_19
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 51
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce82b3c5f1b4d6120800000000000000
+      internalID: 2408663973776533740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_20
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 51
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40f922475ea5ab8b0800000000000000
+      internalID: -5135692483520192764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_21
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 59
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec18477801aca7b0800000000000000
+      internalID: -5211613611041481504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_22
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 51
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2b73b48f27d9dc90800000000000000
+      internalID: -7144442734756791510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_23
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 58
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e42dad8e8aabffeb0800000000000000
+      internalID: -4683819852818099634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_24
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 51
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa726c57d57ffda0800000000000000
+      internalID: -5908874618258425094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_25
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 58
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25d24d4b48c474fc0800000000000000
+      internalID: -3510753251658814126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_26
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 51
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b93bf7cbff86e00800000000000000
+      internalID: 1038360899170311033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_27
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 58
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2df8d569348eaf80800000000000000
+      internalID: -8093386098281480917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_28
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 51
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04981701dbf8d6d50800000000000000
+      internalID: 6732195060176226624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_29
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 52
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970efcca9367b2300800000000000000
+      internalID: 228406196196860025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_30
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 56
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a121210a738403430800000000000000
+      internalID: 3760585092600304154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_31
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 54
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8781c818cda1ce60800000000000000
+      internalID: 7980851089597630351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_32
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf41350c5df475700800000000000000
+      internalID: 528979260712621308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_33
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 57
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268ed9ecf1bbf5540800000000000000
+      internalID: 4998919856689375330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_34
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 50
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f6a492ab587032e0800000000000000
+      internalID: -2148084687290718478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_35
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e58dab31d9f369780800000000000000
+      internalID: -8676677688209254306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_36
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 49
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a24e2e53da351a0800000000000000
+      internalID: -6821918563584693679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_37
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4fa387b0ad81dc50800000000000000
+      internalID: 6688282643035041615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_38
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 49
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f01dce6619aa2480800000000000000
+      internalID: -8923133797867908880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_39
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e69a09d84e6e6b10800000000000000
+      internalID: 1976638545620276964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_40
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 49
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9323465a0c71d44d0800000000000000
+      internalID: -3148834448286141895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_41
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f74c0d6dbcd2586f0800000000000000
+      internalID: -683089414971145089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_42
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 49
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea61980053b429630800000000000000
+      internalID: 3932288115662198446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_43
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 53
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86aca7ae1d05b330800000000000000
+      internalID: 3725898692032243343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_44
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 48
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62d2b3908b0f8d80800000000000000
+      internalID: -8246359745830399377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_45
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 10
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0da29ce2618357c80800000000000000
+      internalID: -8325686668199122224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_46
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aa2617d8a2e5aa50800000000000000
+      internalID: 6531876049361709731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_47
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 5
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6afe031c156beb0800000000000000
+      internalID: -4704482870550354244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_48
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 9
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a644631a235f300800000000000000
+      internalID: 285189819389471277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_49
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 3
+        width: 26
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74052753fef04d60800000000000000
+      internalID: 7872572469736178813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_50
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 4
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1be3dc4e327fe90800000000000000
+      internalID: -6992080430866451986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_51
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144516acf0cad1860800000000000000
+      internalID: 7502341738088977473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree orange sprites_52
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30d2e6ec9ecdc9af0800000000000000
+      internalID: -388192571111887613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tree orange sprites_0: 678476010476695772
+      tree orange sprites_1: -6287539523689128609
+      tree orange sprites_10: -8322421545499222633
+      tree orange sprites_11: 2269485196428317036
+      tree orange sprites_12: 3991192916845263341
+      tree orange sprites_13: -4739674521336168745
+      tree orange sprites_14: -4782434347339412333
+      tree orange sprites_15: 1871586791079611660
+      tree orange sprites_16: -5211590776658794084
+      tree orange sprites_17: 3079838577337043545
+      tree orange sprites_18: 3796665070731263188
+      tree orange sprites_19: 2408663973776533740
+      tree orange sprites_2: -8420501990327547917
+      tree orange sprites_20: -5135692483520192764
+      tree orange sprites_21: -5211613611041481504
+      tree orange sprites_22: -7144442734756791510
+      tree orange sprites_23: -4683819852818099634
+      tree orange sprites_24: -5908874618258425094
+      tree orange sprites_25: -3510753251658814126
+      tree orange sprites_26: 1038360899170311033
+      tree orange sprites_27: -8093386098281480917
+      tree orange sprites_28: 6732195060176226624
+      tree orange sprites_29: 228406196196860025
+      tree orange sprites_3: -1156395735855220153
+      tree orange sprites_30: 3760585092600304154
+      tree orange sprites_31: 7980851089597630351
+      tree orange sprites_32: 528979260712621308
+      tree orange sprites_33: 4998919856689375330
+      tree orange sprites_34: -2148084687290718478
+      tree orange sprites_35: -8676677688209254306
+      tree orange sprites_36: -6821918563584693679
+      tree orange sprites_37: 6688282643035041615
+      tree orange sprites_38: -8923133797867908880
+      tree orange sprites_39: 1976638545620276964
+      tree orange sprites_4: 8808828512176654757
+      tree orange sprites_40: -3148834448286141895
+      tree orange sprites_41: -683089414971145089
+      tree orange sprites_42: 3932288115662198446
+      tree orange sprites_43: 3725898692032243343
+      tree orange sprites_44: -8246359745830399377
+      tree orange sprites_45: -8325686668199122224
+      tree orange sprites_46: 6531876049361709731
+      tree orange sprites_47: -4704482870550354244
+      tree orange sprites_48: 285189819389471277
+      tree orange sprites_49: 7872572469736178813
+      tree orange sprites_5: -2515584890423372887
+      tree orange sprites_50: -6992080430866451986
+      tree orange sprites_51: 7502341738088977473
+      tree orange sprites_52: -388192571111887613
+      tree orange sprites_6: 8898141008874068754
+      tree orange sprites_7: 1720127977472412889
+      tree orange sprites_8: -3653171147740488886
+      tree orange sprites_9: 5364141930580832399
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
