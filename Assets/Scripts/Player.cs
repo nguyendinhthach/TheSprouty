@@ -6,23 +6,30 @@ public class Player : MonoBehaviour
     [SerializeField] private GameInput gameInput;
     [SerializeField] private float moveSpeed = 5.0f;
 
+    private Rigidbody2D rb;
+
     private Vector2 inputVector;
     private bool isMoving;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
+    {
+        inputVector = gameInput.GetMovementVectorNormalized();
+        isMoving = inputVector != Vector2.zero;
+    }
+
+    private void FixedUpdate()
     {
         HandleMovement();
     }
 
     private void HandleMovement()
     {
-        inputVector = gameInput.GetMovementVectorNormalized();
-        Vector3 moveDir = new Vector3(inputVector.x, inputVector.y, 0);
-
-        float moveDistance = moveSpeed * Time.deltaTime;
-        transform.position += moveDir * moveDistance;
-
-        isMoving = inputVector != Vector2.zero;
+        rb.MovePosition(rb.position + inputVector * moveSpeed * Time.fixedDeltaTime);
     }
 
     public Vector2 GetInputVector()
