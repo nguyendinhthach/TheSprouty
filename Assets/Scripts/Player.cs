@@ -44,17 +44,17 @@ public class Player : MonoBehaviour
 
     private void GameInput_OnUseToolAction(object sender, EventArgs e)
     {
-        if (GetEquippedToolType() != ToolType.None && !isMoving)
+        if (!isMoving)
         {
             // Lấy vị trí của Indicator thay vì lấy vị trí chuột trực tiếp
             Vector3 targetPos = GameObject.FindAnyObjectByType<PlayerIndicator>().transform.position;
-
-            Debug.Log("Sử dụng " + equippedTool.toolName + " tại " + targetPos);
 
             OnToolUsed?.Invoke(this, new OnToolUsedEventArgs
             {
                 toolType = GetEquippedToolType()
             });
+
+            Debug.Log($"Player pos:{transform.position}, Indicator Pos: {targetPos}");
         }
     }
 
@@ -62,15 +62,6 @@ public class Player : MonoBehaviour
     {
         inputVector = gameInput.GetMovementVectorNormalized();
         isMoving = inputVector != Vector2.zero;
-
-        //if (Input.GetMouseButtonDown(0) && GetEquippedToolType() != ToolType.None && !isMoving)
-        //{
-        //    // Phát sự kiện đi kèm với thông tin công cụ hiện tại
-        //    OnToolUsed?.Invoke(this, new OnToolUsedEventArgs
-        //    {
-        //        toolType = GetEquippedToolType()
-        //    });
-        //}
     }
 
     private void FixedUpdate()

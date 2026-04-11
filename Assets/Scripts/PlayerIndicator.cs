@@ -6,8 +6,8 @@ public class PlayerIndicator : MonoBehaviour
     [SerializeField] private Player player;
 
     [Header("Settings")]
-    [Tooltip("Offset để xác định tâm của Player trên Grid. Thường là 0.5f.")]
-    [SerializeField] private float playerGridOffset = 0.5f;
+    [Tooltip("Offset để xác định tâm của Player trên Grid. Thường là 0.1f.")]
+    [SerializeField] private float playerGridOffset = 0.1f;
 
     [Tooltip("Offset để đưa Indicator vào chính giữa ô Grid. Thường là 0.5f.")]
     [SerializeField] private float indicatorGridOffset = 0.5f;

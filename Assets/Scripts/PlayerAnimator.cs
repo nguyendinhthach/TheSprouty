@@ -8,8 +8,10 @@ public class PlayerAnimator : MonoBehaviour
     private const string TOOL_TYPE = "ToolType";
     private const string DO_ACTION = "DoAction";
 
-    private Animator animator;
     [SerializeField] private Player player;
+
+    private Animator animator;
+    private Transform indicatorTransform;
 
     private void Awake()
     {
@@ -19,38 +21,52 @@ public class PlayerAnimator : MonoBehaviour
     private void Start()
     {
         player.OnToolUsed += Player_OnToolUsed;
+        indicatorTransform = GameObject.FindAnyObjectByType<PlayerIndicator>().transform;
     }
 
     private void Player_OnToolUsed(object sender, Player.OnToolUsedEventArgs e)
     {
+        if (indicatorTransform != null)
+        {
+            // TẠI ĐÂY: Cộng thêm một khoảng offset Y (ví dụ 0.5f) vào vị trí của Player
+            // để đưa "điểm gốc tính toán" từ chân lên bụng/ngực mèo.
+            Vector3 playerCenter = player.transform.position + new Vector3(0, 0.5f, 0);
+
+            Vector3 direction = (indicatorTransform.position - playerCenter).normalized;
+
+            // Ép các giá trị nhỏ về 0 để tránh việc bị chéo 45 độ
+            float animX = direction.x;
+            float animY = direction.y;
+
+            // Nếu hướng ngang (X) mạnh hơn hướng dọc (Y), hãy ưu tiên X
+            if (Mathf.Abs(animX) > Mathf.Abs(animY)) animY = 0;
+            else animX = 0;
+
+            animator.SetFloat(HORIZONTAL, animX);
+            animator.SetFloat(VERTICAL, animY);
+        }
+
         UseToolAnimation();
     }
 
     private void Update()
     {
         Vector2 input = player.GetInputVector();
-
-        // CHỈ cập nhật Horizontal và Vertical khi nhân vật đang di chuyển
-        // Điều này giúp Blend Tree "nhớ" hướng nhìn cuối cùng khi đứng yên (Idle)
+        // Nếu Player đang chạy, xoay theo hướng chạy
+        // Nếu đứng yên (Idle), KHÔNG làm gì cả -> Player sẽ giữ nguyên hướng nhìn cũ
         if (player.IsMoving())
         {
             animator.SetFloat(HORIZONTAL, input.x);
             animator.SetFloat(VERTICAL, input.y);
         }
 
-        // Cập nhật Speed để Animator biết khi nào chuyển từ Idle sang Walk
-        // magnitude giúp lấy độ lớn của Vector (nếu > 0 nghĩa là đang đi)
         animator.SetFloat(SPEED, input.sqrMagnitude);
     }
 
     public void UseToolAnimation()
     {
-        ToolType currentType = player.GetEquippedToolType();
-
-        // Gửi ToolType vào một Parameter "ToolType" (Int) trong Animator
-        animator.SetInteger(TOOL_TYPE, (int)currentType);
-
-        // Kích hoạt hành động
+        // Cập nhật ToolType để Animator biết chơi animation của Axe, Hoe hay None
+        animator.SetInteger(TOOL_TYPE, (int)player.GetEquippedToolType());
         animator.SetTrigger(DO_ACTION);
     }
 }

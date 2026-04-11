@@ -56621,6 +56621,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerIndicator
   player: {fileID: 1331121697}
+  playerGridOffset: 0.1
+  indicatorGridOffset: 0.5
+  showOnNone: 1
 --- !u!212 &1172254689
 SpriteRenderer:
   serializedVersion: 2
