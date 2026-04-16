@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolSO
   toolName: None
   toolType: 0
+  interactRange: 1
+  power: 5

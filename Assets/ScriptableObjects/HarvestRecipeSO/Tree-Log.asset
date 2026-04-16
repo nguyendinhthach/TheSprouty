@@ -15,6 +15,7 @@ MonoBehaviour:
   targetNode: {fileID: 11400000, guid: b16582f3c4cc7034a833776b38585539, type: 2}
   validTools:
   - {fileID: 11400000, guid: 783bfaed1e959094592b198e5e0af901, type: 2}
+  - {fileID: 11400000, guid: 7fd53173c23c3e94798f19cfbc9e23d1, type: 2}
   dropList:
   - item: {fileID: 11400000, guid: da01abf3fdf836d469bb960a28a39e57, type: 2}
     minAmount: 1
