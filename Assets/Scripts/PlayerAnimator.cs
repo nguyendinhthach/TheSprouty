@@ -95,6 +95,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void TriggerToolAnimation(ToolType toolType)
     {
+        if (toolType == ToolType.None) return; // Không có animation để play
+
         _animator.SetInteger(PARAM_TOOL_TYPE, (int)toolType);
         _animator.SetTrigger(PARAM_DO_ACTION);
     }

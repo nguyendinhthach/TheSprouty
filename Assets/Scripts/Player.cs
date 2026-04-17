@@ -43,8 +43,8 @@ public class Player : MonoBehaviour
     public bool IsMoving => _inputVector != Vector2.zero;
     public Vector2 InputVector => _inputVector;
 
-    public ToolType EquippedToolType => equippedTool != null ? equippedTool.toolType : ToolType.None;
-    public int EquippedToolRange => equippedTool != null ? equippedTool.interactRange : 1;
+    public ToolType EquippedToolType => equippedTool.toolType;
+    public int EquippedToolRange => equippedTool.interactRange;
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -95,9 +95,16 @@ public class Player : MonoBehaviour
     // ----------------------------------------------------------
     private void OnUseToolInputReceived(object sender, EventArgs e)
     {
-        if (IsMoving) return;   // Can't use tools while running
+        if (IsMoving) return;
 
         OnToolUsed?.Invoke(this, new ToolUsedEventArgs { ToolType = EquippedToolType });
+
+        // Nếu tay không (None) thì không có animation event
+        // → gọi PerformToolAction trực tiếp luôn
+        if (EquippedToolType == ToolType.None)
+        {
+            PerformToolAction();
+        }
     }
 
     private void OnSelectedResourceChanged(object sender, PlayerIndicator.SelectedResourceChangedEventArgs e)

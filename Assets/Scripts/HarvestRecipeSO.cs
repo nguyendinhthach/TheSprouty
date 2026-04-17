@@ -32,7 +32,8 @@ public class HarvestRecipeSO : ScriptableObject
     public bool IsValidTool(ToolSO toolToCheck)
     {
         if (validTools == null || validTools.Length == 0)
-            return true;                      // No restriction — bare hands OK
+            return true;                      // Không hạn chế tool nào → tay không cũng được
+
 
         foreach (ToolSO tool in validTools)
         {
