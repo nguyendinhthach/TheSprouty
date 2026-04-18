@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055934718090090751}
   - component: {fileID: 8867281910267211279}
+  - component: {fileID: 1896686391753973332}
   m_Layer: 6
   m_Name: PearTree_Visual
   m_TagString: Untagged
@@ -91,6 +92,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1896686391753973332
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5639804679636378720}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 68ba186da39d1d640909f4146e513c9d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7060003698321830243
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,10 +206,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1719cd5e34d5e7e4a94b4c0b4e90782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitTree
-  harvestRecipeSO: {fileID: 11400000, guid: 8367ee83e642c3f4eb326928b712a811, type: 2}
-  treeAnimator: {fileID: 0}
+  <harvestRecipeSO>k__BackingField: {fileID: 11400000, guid: 8367ee83e642c3f4eb326928b712a811, type: 2}
+  fallDuration: 1
+  fallRecipeSO: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}
   fruitDropOnHit:
   - item: {fileID: 11400000, guid: cebbecabce95f67429a8e88adb722e96, type: 2}
-    minAmount: 1
-    maxAmount: 1
+    minAmount: 3
+    maxAmount: 3
     dropChance: 30
+  fruitDropTriggerChance: 40
+  fruitTreeAnimator: {fileID: 1896686391753973332}

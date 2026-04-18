@@ -9,7 +9,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     // Serialized fields  (ENCAPSULATION: inspector access only)
     // ----------------------------------------------------------
     [Header("Resource Config")]
-    [SerializeField] protected HarvestRecipeSO harvestRecipeSO;
+    [field: SerializeField] protected HarvestRecipeSO harvestRecipeSO { get; set; }
 
     // ----------------------------------------------------------
     // Private state  (ENCAPSULATION: no direct external access)
@@ -80,6 +80,8 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     /// custom death effects before the GameObject is destroyed.</summary>
     protected virtual void OnDestroyed() { }
 
+    protected virtual float DestroyDelay => 0f;
+
     // ----------------------------------------------------------
     // Private implementation  (ENCAPSULATION)
     // ----------------------------------------------------------
@@ -88,7 +90,11 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
         Player.Instance.ClearTargetResource();
         DropLoot();
         OnDestroyed();
-        Destroy(gameObject);
+
+        if (DestroyDelay > 0f)
+            Invoke(nameof(DestroyGameObject), DestroyDelay);
+        else
+            DestroyGameObject();
     }
 
     // Helper — spawns a single drop entry N times with a bounce arc
@@ -111,5 +117,10 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
             if (spawnedItem.TryGetComponent<ItemBounceObject>(out var bounce))
                 bounce.StartBounce(origin, origin + scatter);
         }
+    }
+
+    private void DestroyGameObject()
+    {
+        Destroy(gameObject);
     }
 }

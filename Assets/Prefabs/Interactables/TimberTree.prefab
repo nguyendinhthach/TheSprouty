@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1992985454347125003}
-  - component: {fileID: 9104082065643114746}
   - component: {fileID: 7445298355453181776}
+  - component: {fileID: 5865501914169664877}
   m_Layer: 6
   m_Name: TimberTree
   m_TagString: Untagged
@@ -34,20 +34,6 @@ Transform:
   - {fileID: 9191737253458169931}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9104082065643114746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5251989504526478044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdd95e0eec02cf428f0e26bc0322697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tree
-  harvestRecipeSO: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}
-  treeAnimator: {fileID: 0}
 --- !u!61 &7445298355453181776
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -94,6 +80,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6, y: 0.7}
   m_EdgeRadius: 0
+--- !u!114 &5865501914169664877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251989504526478044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75c8d9a75e3d1fa4da073fe2cb50fc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimberTree
+  <harvestRecipeSO>k__BackingField: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}
+  treeAnimator: {fileID: 4539236704805535762}
 --- !u!1 &8386537374795470713
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9191737253458169931}
   - component: {fileID: 7395481409208834010}
+  - component: {fileID: 4539236704805535762}
   m_Layer: 6
   m_Name: TimberTree_Visual
   m_TagString: Untagged
@@ -185,3 +186,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &4539236704805535762
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8386537374795470713}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba845f17c37fc1b48afcb10efe6cffdb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -5,21 +5,24 @@ using Debug = UnityEngine.Debug;
 
 public class Tree : ResourceNode
 {
-    [Header("Tree FX")]
-    [SerializeField] private Animator treeAnimator;
-
     private const string ANIM_HIT = "Hit";
     private const string ANIM_FALL = "Fall";
 
+    [Tooltip("Thời gian khớp với độ dài clip Tree_FallDown")]
+    [SerializeField] private float fallDuration = 1f;
+
+    protected virtual Animator TreeAnimator => null;
+
     protected override void OnHit(ToolSO playerTool)
     {
-        //treeAnimator?.SetTrigger(ANIM_HIT);
-        // Future: play axe-chop sound here
+        TreeAnimator?.SetTrigger(ANIM_HIT);
     }
 
     protected override void OnDestroyed()
     {
-        //treeAnimator?.SetTrigger(ANIM_FALL);
-        // Future: spawn stump, play falling sound, screen shake
+        TreeAnimator?.SetTrigger(ANIM_FALL);
     }
+
+    // Override DestroyNode timing — chờ anim xong rồi mới Destroy
+    protected override float DestroyDelay => fallDuration;
 }
