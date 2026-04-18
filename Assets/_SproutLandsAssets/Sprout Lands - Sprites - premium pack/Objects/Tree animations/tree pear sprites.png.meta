@@ -193,7 +193,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -207,7 +207,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -231,7 +231,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -259,12 +259,12 @@ TextureImporter:
       name: tree pear sprites_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 195
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: tree pear sprites_1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 147
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: tree pear sprites_2
       rect:
         serializedVersion: 2
-        x: 59
-        y: 147
-        width: 26
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: tree pear sprites_3
       rect:
         serializedVersion: 2
-        x: 107
-        y: 147
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: tree pear sprites_4
       rect:
         serializedVersion: 2
-        x: 155
-        y: 147
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: tree pear sprites_5
       rect:
         serializedVersion: 2
-        x: 11
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: tree pear sprites_6
       rect:
         serializedVersion: 2
-        x: 59
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: tree pear sprites_7
       rect:
         serializedVersion: 2
-        x: 107
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -435,12 +435,12 @@ TextureImporter:
       name: tree pear sprites_8
       rect:
         serializedVersion: 2
-        x: 154
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: tree pear sprites_9
       rect:
         serializedVersion: 2
-        x: 202
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: tree pear sprites_10
       rect:
         serializedVersion: 2
-        x: 251
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: tree pear sprites_11
       rect:
         serializedVersion: 2
-        x: 11
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -523,12 +523,12 @@ TextureImporter:
       name: tree pear sprites_12
       rect:
         serializedVersion: 2
-        x: 59
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -545,12 +545,12 @@ TextureImporter:
       name: tree pear sprites_13
       rect:
         serializedVersion: 2
-        x: 107
-        y: 51
-        width: 30
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: tree pear sprites_14
       rect:
         serializedVersion: 2
-        x: 151
-        y: 51
-        width: 30
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,12 +589,12 @@ TextureImporter:
       name: tree pear sprites_15
       rect:
         serializedVersion: 2
-        x: 180
-        y: 61
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -611,12 +611,12 @@ TextureImporter:
       name: tree pear sprites_16
       rect:
         serializedVersion: 2
-        x: 198
-        y: 51
-        width: 30
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -633,12 +633,12 @@ TextureImporter:
       name: tree pear sprites_17
       rect:
         serializedVersion: 2
-        x: 244
-        y: 58
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: tree pear sprites_18
       rect:
         serializedVersion: 2
-        x: 246
-        y: 51
-        width: 31
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -677,12 +677,12 @@ TextureImporter:
       name: tree pear sprites_19
       rect:
         serializedVersion: 2
-        x: 288
-        y: 66
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -699,12 +699,12 @@ TextureImporter:
       name: tree pear sprites_20
       rect:
         serializedVersion: 2
-        x: 299
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -721,12 +721,12 @@ TextureImporter:
       name: tree pear sprites_21
       rect:
         serializedVersion: 2
-        x: 335
-        y: 58
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,12 +743,12 @@ TextureImporter:
       name: tree pear sprites_22
       rect:
         serializedVersion: 2
-        x: 347
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 528
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -765,12 +765,12 @@ TextureImporter:
       name: tree pear sprites_23
       rect:
         serializedVersion: 2
-        x: 384
-        y: 60
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: tree pear sprites_24
       rect:
         serializedVersion: 2
-        x: 395
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -805,627 +805,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_25
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 59
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2716cc01841970a10800000000000000
-      internalID: 1875627508528603506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_26
-      rect:
-        serializedVersion: 2
-        x: 442
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 208e82b11df19dea0800000000000000
-      internalID: -5847607658199586814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_27
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 59
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 544ea978d74c2bed0800000000000000
-      internalID: -2399639608010021819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_28
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e04755d48277e3ff0800000000000000
-      internalID: -54475130502024178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_29
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 59
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 034ba196a5f6107d0800000000000000
-      internalID: -2953957446477237200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_30
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 009b94bad1c9abee0800000000000000
-      internalID: -1244510695772800768
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_31
-      rect:
-        serializedVersion: 2
-        x: 227
-        y: 51
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8e0acf2be1ed17290800000000000000
-      internalID: -7894284448370482968
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_32
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 53
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e50d22933bbce4f00800000000000000
-      internalID: 1103042929370517598
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_33
-      rect:
-        serializedVersion: 2
-        x: 289
-        y: 48
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 47ce12ab32351f250800000000000000
-      internalID: 5976649593409105012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_34
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12bdf241b5d3abe80800000000000000
-      internalID: -8162143913265603807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_35
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 50
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5fade367bd6287ea0800000000000000
-      internalID: -5874902989881287947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_36
-      rect:
-        serializedVersion: 2
-        x: 372
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 47e24353496e7f150800000000000000
-      internalID: 5906442960541855348
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_37
-      rect:
-        serializedVersion: 2
-        x: 386
-        y: 49
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0cd49676d8ca39d10800000000000000
-      internalID: 2131236772001697216
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_38
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 49f11e2aaff12d510800000000000000
-      internalID: 1572354381240672148
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_39
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 49
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7297a06c5fb57ac20800000000000000
-      internalID: 3217641569927199015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_40
-      rect:
-        serializedVersion: 2
-        x: 468
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d60429e6721e73180800000000000000
-      internalID: -9135585759622709139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_41
-      rect:
-        serializedVersion: 2
-        x: 482
-        y: 49
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e630600e7ed9e2900800000000000000
-      internalID: 661639814491538286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_42
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5a1e016409ea4b520800000000000000
-      internalID: 2716988409885286821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_43
-      rect:
-        serializedVersion: 2
-        x: 530
-        y: 49
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 072801b612f12faf0800000000000000
-      internalID: -364194391472962960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_44
-      rect:
-        serializedVersion: 2
-        x: 564
-        y: 52
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 464dbaf9735aba630800000000000000
-      internalID: 3939423957386253412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_45
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 11
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f2f45fe3f5877940800000000000000
-      internalID: 5293847169736176373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_46
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 3
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a226648b655e07560800000000000000
-      internalID: 7309594355843883562
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_47
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 4
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 69735c587e5d03460800000000000000
-      internalID: 7219505393033361302
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_48
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 10
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: affde0325359c2800800000000000000
-      internalID: 589009706732675066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_49
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 3
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ec6d36a1cb481930800000000000000
-      internalID: 4114121554692762856
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_50
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 3
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1c3ea884aea71f80800000000000000
-      internalID: -8135842180130522082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_51
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 1
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9bd196c536ddf6850800000000000000
-      internalID: 6372555416574434745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree pear sprites_52
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 0
-        width: 11
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4831d443652279d10800000000000000
-      internalID: 2132210702223217540
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 70619851a22a55d41ae534f245631c21
     internalID: 0
     vertices: []
     indices: 
@@ -1433,7 +817,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20000000298023225},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       tree pear sprites_0: -2854417885101426037
       tree pear sprites_1: 6458462569031074555
@@ -1453,37 +839,9 @@ TextureImporter:
       tree pear sprites_22: -3543731520957575730
       tree pear sprites_23: -7786148455603856495
       tree pear sprites_24: -7210401554503283870
-      tree pear sprites_25: 1875627508528603506
-      tree pear sprites_26: -5847607658199586814
-      tree pear sprites_27: -2399639608010021819
-      tree pear sprites_28: -54475130502024178
-      tree pear sprites_29: -2953957446477237200
       tree pear sprites_3: -6737036251262387505
-      tree pear sprites_30: -1244510695772800768
-      tree pear sprites_31: -7894284448370482968
-      tree pear sprites_32: 1103042929370517598
-      tree pear sprites_33: 5976649593409105012
-      tree pear sprites_34: -8162143913265603807
-      tree pear sprites_35: -5874902989881287947
-      tree pear sprites_36: 5906442960541855348
-      tree pear sprites_37: 2131236772001697216
-      tree pear sprites_38: 1572354381240672148
-      tree pear sprites_39: 3217641569927199015
       tree pear sprites_4: -4673689509419245827
-      tree pear sprites_40: -9135585759622709139
-      tree pear sprites_41: 661639814491538286
-      tree pear sprites_42: 2716988409885286821
-      tree pear sprites_43: -364194391472962960
-      tree pear sprites_44: 3939423957386253412
-      tree pear sprites_45: 5293847169736176373
-      tree pear sprites_46: 7309594355843883562
-      tree pear sprites_47: 7219505393033361302
-      tree pear sprites_48: 589009706732675066
-      tree pear sprites_49: 4114121554692762856
       tree pear sprites_5: -1497166785316665339
-      tree pear sprites_50: -8135842180130522082
-      tree pear sprites_51: 6372555416574434745
-      tree pear sprites_52: 2132210702223217540
       tree pear sprites_6: -5969183518979803023
       tree pear sprites_7: 2421331563184110273
       tree pear sprites_8: 2555660750370138063

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1469057351040146535
+--- !u!1 &1779709245212951530
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,52 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8342042334218217267}
-  - component: {fileID: 7403777357715553425}
-  - component: {fileID: 6706942654985283473}
+  - component: {fileID: 7621496997352170683}
+  - component: {fileID: 8159674398836415420}
+  - component: {fileID: 508212242214907953}
   m_Layer: 6
-  m_Name: Tree
+  m_Name: PeachTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8342042334218217267
+--- !u!4 &7621496997352170683
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469057351040146535}
+  m_GameObject: {fileID: 1779709245212951530}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.5, z: 0}
+  m_LocalPosition: {x: 2.5, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3950715751780174749}
+  - {fileID: 3587745523711278459}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7403777357715553425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469057351040146535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdd95e0eec02cf428f0e26bc0322697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Tree
-  harvestRecipeSO: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}
---- !u!61 &6706942654985283473
+--- !u!61 &8159674398836415420
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469057351040146535}
+  m_GameObject: {fileID: 1779709245212951530}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -93,7 +80,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6, y: 0.7}
   m_EdgeRadius: 0
---- !u!1 &2101416292142125725
+--- !u!114 &508212242214907953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779709245212951530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1719cd5e34d5e7e4a94b4c0b4e90782c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitTree
+  harvestRecipeSO: {fileID: 11400000, guid: 9590825efb273a84eb901da838437945, type: 2}
+  treeAnimator: {fileID: 0}
+  fruitDropOnHit:
+  - item: {fileID: 11400000, guid: aad0418cdcedf8e43bb9bff4763cecea, type: 2}
+    minAmount: 1
+    maxAmount: 1
+    dropChance: 30
+--- !u!1 &7058912514963034033
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,38 +107,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3950715751780174749}
-  - component: {fileID: 3588061756010326774}
+  - component: {fileID: 3587745523711278459}
+  - component: {fileID: 6825008774718948081}
   m_Layer: 6
-  m_Name: Tree_Visual
+  m_Name: PeachTree_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3950715751780174749
+--- !u!4 &3587745523711278459
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101416292142125725}
+  m_GameObject: {fileID: 7058912514963034033}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 8342042334218217267}
+  m_Father: {fileID: 7621496997352170683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3588061756010326774
+--- !u!212 &6825008774718948081
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101416292142125725}
+  m_GameObject: {fileID: 7058912514963034033}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -174,12 +180,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9111269859762049092, guid: 0554c05621e60e44cb57379c9c3d4ac5, type: 3}
+  m_Sprite: {fileID: -835646767248225113, guid: 7187dbc1821dda448b9800d3f97c3aa6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.625, y: 2}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

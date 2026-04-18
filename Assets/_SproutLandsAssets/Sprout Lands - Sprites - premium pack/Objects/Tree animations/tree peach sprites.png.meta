@@ -193,7 +193,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -207,7 +207,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -231,7 +231,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -259,12 +259,12 @@ TextureImporter:
       name: tree peach sprites_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 195
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 192
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: tree peach sprites_1
       rect:
         serializedVersion: 2
-        x: 10
-        y: 147
-        width: 28
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -303,12 +303,12 @@ TextureImporter:
       name: tree peach sprites_2
       rect:
         serializedVersion: 2
-        x: 59
-        y: 147
-        width: 26
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -325,12 +325,12 @@ TextureImporter:
       name: tree peach sprites_3
       rect:
         serializedVersion: 2
-        x: 107
-        y: 147
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -347,12 +347,12 @@ TextureImporter:
       name: tree peach sprites_4
       rect:
         serializedVersion: 2
-        x: 155
-        y: 147
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -369,12 +369,12 @@ TextureImporter:
       name: tree peach sprites_5
       rect:
         serializedVersion: 2
-        x: 11
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -391,12 +391,12 @@ TextureImporter:
       name: tree peach sprites_6
       rect:
         serializedVersion: 2
-        x: 59
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -413,12 +413,12 @@ TextureImporter:
       name: tree peach sprites_7
       rect:
         serializedVersion: 2
-        x: 107
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -435,12 +435,12 @@ TextureImporter:
       name: tree peach sprites_8
       rect:
         serializedVersion: 2
-        x: 154
-        y: 99
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -457,12 +457,12 @@ TextureImporter:
       name: tree peach sprites_9
       rect:
         serializedVersion: 2
-        x: 202
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -479,12 +479,12 @@ TextureImporter:
       name: tree peach sprites_10
       rect:
         serializedVersion: 2
-        x: 251
-        y: 99
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 96
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -501,12 +501,12 @@ TextureImporter:
       name: tree peach sprites_11
       rect:
         serializedVersion: 2
-        x: 11
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -523,12 +523,12 @@ TextureImporter:
       name: tree peach sprites_12
       rect:
         serializedVersion: 2
-        x: 59
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -545,12 +545,12 @@ TextureImporter:
       name: tree peach sprites_13
       rect:
         serializedVersion: 2
-        x: 107
-        y: 51
-        width: 32
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: tree peach sprites_14
       rect:
         serializedVersion: 2
-        x: 154
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 144
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -589,12 +589,12 @@ TextureImporter:
       name: tree peach sprites_15
       rect:
         serializedVersion: 2
-        x: 180
-        y: 61
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 192
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -611,12 +611,12 @@ TextureImporter:
       name: tree peach sprites_16
       rect:
         serializedVersion: 2
-        x: 200
-        y: 51
-        width: 28
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -633,12 +633,12 @@ TextureImporter:
       name: tree peach sprites_17
       rect:
         serializedVersion: 2
-        x: 246
-        y: 51
-        width: 31
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 288
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -655,12 +655,12 @@ TextureImporter:
       name: tree peach sprites_18
       rect:
         serializedVersion: 2
-        x: 289
-        y: 67
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 336
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -677,12 +677,12 @@ TextureImporter:
       name: tree peach sprites_19
       rect:
         serializedVersion: 2
-        x: 299
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 384
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -699,12 +699,12 @@ TextureImporter:
       name: tree peach sprites_20
       rect:
         serializedVersion: 2
-        x: 347
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 432
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -721,12 +721,12 @@ TextureImporter:
       name: tree peach sprites_21
       rect:
         serializedVersion: 2
-        x: 385
-        y: 59
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 480
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -743,12 +743,12 @@ TextureImporter:
       name: tree peach sprites_22
       rect:
         serializedVersion: 2
-        x: 395
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 528
+        y: 48
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -765,12 +765,12 @@ TextureImporter:
       name: tree peach sprites_23
       rect:
         serializedVersion: 2
-        x: 442
-        y: 51
-        width: 27
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -787,12 +787,12 @@ TextureImporter:
       name: tree peach sprites_24
       rect:
         serializedVersion: 2
-        x: 481
-        y: 59
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -805,627 +805,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_25
-      rect:
-        serializedVersion: 2
-        x: 490
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7472af9cc622b6ac0800000000000000
-      internalID: -3860954404899641529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_26
-      rect:
-        serializedVersion: 2
-        x: 539
-        y: 51
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 05a871b5b4191bc20800000000000000
-      internalID: 3220514961383459408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_27
-      rect:
-        serializedVersion: 2
-        x: 227
-        y: 52
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44d7a025cee1e7400800000000000000
-      internalID: 323730223554788676
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_28
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 56
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fba69f20cf92c9780800000000000000
-      internalID: -8675012619864020289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_29
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 54
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1fee8008bc9edabb0800000000000000
-      internalID: -4923021757410382095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_30
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 53
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 68aa300a3ce5804f0800000000000000
-      internalID: -862335134345221498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_31
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 57
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bcb0ce8a6248462b0800000000000000
-      internalID: -5592199535709647925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_32
-      rect:
-        serializedVersion: 2
-        x: 340
-        y: 50
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21fd5207fc39d2c00800000000000000
-      internalID: 877520021556158226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_33
-      rect:
-        serializedVersion: 2
-        x: 372
-        y: 53
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1cee5ae81edef2d0800000000000000
-      internalID: -3242910483067507686
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_34
-      rect:
-        serializedVersion: 2
-        x: 420
-        y: 53
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bc05405dedad00d80800000000000000
-      internalID: -8286382663770287925
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_35
-      rect:
-        serializedVersion: 2
-        x: 433
-        y: 58
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: df33d2a1a659d16f0800000000000000
-      internalID: -712248883116428291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_36
-      rect:
-        serializedVersion: 2
-        x: 468
-        y: 53
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f52cff6223aa7ab20800000000000000
-      internalID: 3145669997120963167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_37
-      rect:
-        serializedVersion: 2
-        x: 484
-        y: 50
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc1dfe5229d5e77c0800000000000000
-      internalID: -4071714130813267505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_38
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 54
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 03906f96829ec9f50800000000000000
-      internalID: 6889637889755711792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_39
-      rect:
-        serializedVersion: 2
-        x: 529
-        y: 58
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 60c751f2a2bd28de0800000000000000
-      internalID: -1332261565523198970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_40
-      rect:
-        serializedVersion: 2
-        x: 564
-        y: 53
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee95fca0268b09780800000000000000
-      internalID: -8678233750715278866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_41
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 48
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 072da0f629c725430800000000000000
-      internalID: 3770212806432576112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_42
-      rect:
-        serializedVersion: 2
-        x: 388
-        y: 49
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5df576c2b85a9db10800000000000000
-      internalID: 2006817126134276053
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_43
-      rect:
-        serializedVersion: 2
-        x: 436
-        y: 49
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a136b86895da20d70800000000000000
-      internalID: 9007952804715389722
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_44
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 49
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8521eb208d9c368e0800000000000000
-      internalID: -1701294304619785640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_45
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 10
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e998a4cf91d9d78f0800000000000000
-      internalID: -541103645282104930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_46
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 3
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 99b77dccf285a6eb0800000000000000
-      internalID: -4725867896648533095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_47
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 5
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07a35e5f89becb7a0800000000000000
-      internalID: -6359949531560986000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_48
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 9
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01d306d3ccb36d8a0800000000000000
-      internalID: -6280766881932493552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_49
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 3
-        width: 26
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a1ffc3682fa6cb3c0800000000000000
-      internalID: -4342478350825226470
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_50
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 4
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 87c82213ef1511b10800000000000000
-      internalID: 1950430265816026232
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_51
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 1
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 962c60fe1cf5ad180800000000000000
-      internalID: -9089847611350400407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tree peach sprites_52
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 0
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 591fe9fd2f1d18790800000000000000
-      internalID: -7529506260922732139
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d690b74275294b34fb5c003d2bf22c36
     internalID: 0
     vertices: []
     indices: 
@@ -1433,7 +817,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20000000298023225},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       tree peach sprites_0: -835646767248225113
       tree peach sprites_1: 3709822014211218255
@@ -1453,37 +839,9 @@ TextureImporter:
       tree peach sprites_22: -8791766095338017201
       tree peach sprites_23: -6501584822148461933
       tree peach sprites_24: -5968974889935545265
-      tree peach sprites_25: -3860954404899641529
-      tree peach sprites_26: 3220514961383459408
-      tree peach sprites_27: 323730223554788676
-      tree peach sprites_28: -8675012619864020289
-      tree peach sprites_29: -4923021757410382095
       tree peach sprites_3: -2571937049571841950
-      tree peach sprites_30: -862335134345221498
-      tree peach sprites_31: -5592199535709647925
-      tree peach sprites_32: 877520021556158226
-      tree peach sprites_33: -3242910483067507686
-      tree peach sprites_34: -8286382663770287925
-      tree peach sprites_35: -712248883116428291
-      tree peach sprites_36: 3145669997120963167
-      tree peach sprites_37: -4071714130813267505
-      tree peach sprites_38: 6889637889755711792
-      tree peach sprites_39: -1332261565523198970
       tree peach sprites_4: -2284524414782429442
-      tree peach sprites_40: -8678233750715278866
-      tree peach sprites_41: 3770212806432576112
-      tree peach sprites_42: 2006817126134276053
-      tree peach sprites_43: 9007952804715389722
-      tree peach sprites_44: -1701294304619785640
-      tree peach sprites_45: -541103645282104930
-      tree peach sprites_46: -4725867896648533095
-      tree peach sprites_47: -6359949531560986000
-      tree peach sprites_48: -6280766881932493552
-      tree peach sprites_49: -4342478350825226470
       tree peach sprites_5: -5871313780060057527
-      tree peach sprites_50: 1950430265816026232
-      tree peach sprites_51: -9089847611350400407
-      tree peach sprites_52: -7529506260922732139
       tree peach sprites_6: 4076602050670841624
       tree peach sprites_7: -2839149294659393809
       tree peach sprites_8: 1771891611943134278

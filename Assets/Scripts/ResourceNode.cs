@@ -28,7 +28,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     }
 
     // ----------------------------------------------------------
-    // IDamageable  (POLYMORPHISM: overridable in subclasses)
+    // IDamageable
     // ----------------------------------------------------------
     public virtual void TakeDamage(ToolSO playerTool)
     {
@@ -37,6 +37,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
 
         _currentHealth -= playerTool.power;
         OnHit(playerTool);
+        OnHitDrop();
 
         if (!IsAlive)
             DestroyNode();
@@ -72,6 +73,9 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     /// to add hit sounds, screen-shake, animations, etc.</summary>
     protected virtual void OnHit(ToolSO playerTool) { }
 
+    protected virtual void OnHitDrop() { }
+
+
     /// <summary>Called when health reaches zero. Override to add
     /// custom death effects before the GameObject is destroyed.</summary>
     protected virtual void OnDestroyed() { }
@@ -88,7 +92,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     }
 
     // Helper — spawns a single drop entry N times with a bounce arc
-    private void SpawnDrops(DropEntry entry, int amount)
+    protected void SpawnDrops(DropEntry entry, int amount)
     {
         if (entry.item?.prefab == null) return;
 
