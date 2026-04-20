@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8060651941561035848}
   - component: {fileID: 3189748019174837573}
-  - component: {fileID: 7299668428009068331}
   m_Layer: 6
-  m_Name: AppleTree_Visual
+  m_Name: BoulderMedium_Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 250537877371905845, guid: feb25b25cd83e5846ac455664de048e3, type: 3}
+  m_Sprite: {fileID: -942454962, guid: 2b0f93cb47140e64f9d1a4aa1c9f5e6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,28 +91,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!95 &7299668428009068331
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6283973100312591242}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 4186aeaf6c6583a449e6b4af406ae769, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8845356514807093146
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,10 +100,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5096974416068045832}
-  - component: {fileID: 606158153963972721}
-  - component: {fileID: 151281807341770599}
+  - component: {fileID: 5962692372107368800}
+  - component: {fileID: 3423202602651503703}
   m_Layer: 6
-  m_Name: AppleTree
+  m_Name: BoulderMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +125,7 @@ Transform:
   - {fileID: 8060651941561035848}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &606158153963972721
+--- !u!61 &5962692372107368800
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,7 +159,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.08}
+  m_Offset: {x: 0, y: 0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -192,9 +169,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6, y: 0.7}
+  m_Size: {x: 1, y: 0.75}
   m_EdgeRadius: 0
---- !u!114 &151281807341770599
+--- !u!114 &3423202602651503703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,16 +180,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 8845356514807093146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1719cd5e34d5e7e4a94b4c0b4e90782c, type: 3}
+  m_Script: {fileID: 11500000, guid: 41d40d6ab20e0e54cb013e24e7d52801, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FruitTree
-  <harvestRecipeSO>k__BackingField: {fileID: 11400000, guid: 461fa78ab44dab4478cd4af32d741e31, type: 2}
-  fallDuration: 1
-  fallRecipeSO: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}
-  fruitDropOnHit:
-  - item: {fileID: 11400000, guid: 7a51751da0b853347a0807d5ccd35d43, type: 2}
-    minAmount: 3
-    maxAmount: 3
-    dropChance: 30
-  fruitDropTriggerChance: 40
-  fruitTreeAnimator: {fileID: 7299668428009068331}
+  m_EditorClassIdentifier: Assembly-CSharp::Boulder
+  resourceNodeSO: {fileID: 11400000, guid: 1ad8be2a42c88e0478a4c5c6a281a0de, type: 2}
+  <harvestRecipeSO>k__BackingField: {fileID: 11400000, guid: 331a89c8a6dd05c44af31f84e331e803, type: 2}
+  shakeDuration: 0.2
+  shakeIntensity: 0.08
+  shakeFrequency: 40
+  destroyEffectDuration: 0.4
+  flashCount: 3
+  debrisPrefab: {fileID: 2821300661665969474, guid: 7d20322b325a3644ea9c5a4b04805470, type: 3}
+  debrisCount: 5
+  dropOnHit:
+  - item: {fileID: 11400000, guid: a431c1d941d4ff342bea945b7b978d92, type: 2}
+    minAmount: 1
+    maxAmount: 1
+    dropChance: 50

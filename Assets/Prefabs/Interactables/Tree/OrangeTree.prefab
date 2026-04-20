@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1719cd5e34d5e7e4a94b4c0b4e90782c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitTree
+  resourceNodeSO: {fileID: 11400000, guid: b16582f3c4cc7034a833776b38585539, type: 2}
   <harvestRecipeSO>k__BackingField: {fileID: 11400000, guid: fb3c5a3da73b8d04c9f63b1f46444f0d, type: 2}
   fallDuration: 1
   fallRecipeSO: {fileID: 11400000, guid: bd8b805bb1cf83e49b694c4604be29dc, type: 2}

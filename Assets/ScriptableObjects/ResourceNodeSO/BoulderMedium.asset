@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efd602d668c2ba448a3b2a14d966fcca, type: 3}
-  m_Name: Tree
+  m_Name: BoulderMedium
   m_EditorClassIdentifier: Assembly-CSharp::ResourceNodeSO
-  nodeName: Tree
+  nodeName: Boulder Medium
   maxHealth: 50
-  prefab: {fileID: 8342042334218217267, guid: 7eac5f73bc4bd1b4ab5aa79f5e350311, type: 3}
+  prefab: {fileID: 5096974416068045832, guid: 94d68c11d9633a24eb3795a437bc120f, type: 3}

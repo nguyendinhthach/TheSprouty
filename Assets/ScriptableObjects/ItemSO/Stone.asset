@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40950fe5af00e7643bdbf8b9fd034442, type: 3}
-  m_Name: Log
+  m_Name: Stone
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Log
-  icon: {fileID: 0}
-  prefab: {fileID: 7767158721802675567, guid: 4213d1ddcbaf862409e921b64d9e13cc, type: 3}
+  itemName: Stone
+  icon: {fileID: 4691911435948503463, guid: f8c46a4621c5d8c4eb9cd6c3842de3fe, type: 3}
+  prefab: {fileID: 3256699882306034681, guid: b5877c646eec89c4aa20c95a9098680a, type: 3}
   maxStackSize: 99

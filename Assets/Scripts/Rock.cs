@@ -1,29 +1,25 @@
-using System.Collections.Generic;
+// ──────────────────────────────────────────────
+// TheSprouty | Scripts/Rock.cs
+// Abstract base for all rock-type ResourceNodes.
+// Plays hit particles on each hit. Subclasses add their own behaviour.
+// ──────────────────────────────────────────────
 using UnityEngine;
 
-public class Rock : ResourceNode
+public abstract class Rock : ResourceNode
 {
-    [Header("Drop On Hit")]
-    [SerializeField] private List<DropEntry> rockDropOnHit;
+    // ----------------------------------------------------------
+    // Serialized fields
+    // ----------------------------------------------------------
+    //[Header("Rock FX")]
+    //[SerializeField] private ParticleSystem hitParticles;
 
-    [Header("Rock FX")]
-    [SerializeField] private ParticleSystem hitParticles;
+    // ----------------------------------------------------------
+    // Protected hooks
+    // ----------------------------------------------------------
 
+    /// <summary>Plays hit particles. Subclasses call base.OnHit() to keep this behaviour.</summary>
     protected override void OnHit(ToolSO playerTool)
     {
-        hitParticles?.Play();
-    }
-
-    protected override void OnHitDrop()
-    {
-        if (rockDropOnHit == null || rockDropOnHit.Count == 0) return;
-
-        foreach (DropEntry entry in rockDropOnHit)
-        {
-            if (Random.Range(0f, 100f) > entry.dropChance) continue;
-
-            int amount = Random.Range(entry.minAmount, entry.maxAmount + 1);
-            SpawnDrops(entry, amount);
-        }
+        //hitParticles?.Play();
     }
 }

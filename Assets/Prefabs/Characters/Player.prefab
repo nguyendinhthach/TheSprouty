@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becf7548385d07a4d8ef0fe8baf1c1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  gameInput: {fileID: 0}
-  playerIndicator: {fileID: 0}
+  gameInput: {fileID: 6783777560172355331, guid: 82653a1077b84f647a39fdc76c45fbcd, type: 3}
+  playerIndicator: {fileID: 62710058725928766, guid: 3d3532f0e86ceee469fc768f902582d7, type: 3}
   moveSpeed: 4
   equippedTool: {fileID: 11400000, guid: 783bfaed1e959094592b198e5e0af901, type: 2}
 --- !u!50 &5567006630849984997

@@ -1,5 +1,4 @@
-﻿using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [RequireComponent(typeof(Collider2D))]
@@ -9,6 +8,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     // Serialized fields  (ENCAPSULATION: inspector access only)
     // ----------------------------------------------------------
     [Header("Resource Config")]
+    [SerializeField] private ResourceNodeSO resourceNodeSO;
     [field: SerializeField] protected HarvestRecipeSO harvestRecipeSO { get; set; }
 
     // ----------------------------------------------------------
@@ -23,8 +23,8 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
 
     protected virtual void Start()
     {
-        if (harvestRecipeSO?.targetNode != null)
-            _currentHealth = harvestRecipeSO.targetNode.maxHealth;
+        if (resourceNodeSO != null)
+            _currentHealth = resourceNodeSO.maxHealth;
     }
 
     // ----------------------------------------------------------

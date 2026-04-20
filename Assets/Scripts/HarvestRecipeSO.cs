@@ -13,14 +13,14 @@ public class DropEntry
 }
 
 // ============================================================
-// HarvestRecipeSO — links a ResourceNodeSO to valid tools
-//                   and its loot table.
+// HarvestRecipeSO — defines valid tools and loot table for harvesting.
+// Node identity (HP, name, prefab) is now held by ResourceNodeSO
+// on the ResourceNode component directly — not here.
 // ============================================================
 [CreateAssetMenu(fileName = "New Harvest Recipe", menuName = "TheSprouty/Environment/Harvest Recipe")]
 public class HarvestRecipeSO : ScriptableObject
 {
     [Header("Input")]
-    public ResourceNodeSO targetNode;
     [Tooltip("Which tools can harvest this node? Leave empty = any tool (including bare hands).")]
     public ToolSO[] validTools;
 
