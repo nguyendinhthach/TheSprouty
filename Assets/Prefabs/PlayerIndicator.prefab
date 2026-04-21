@@ -78,9 +78,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: 1019341361
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 5ed82765defcf4e4589739591f38489e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59adc1ef7c289924db5ddc273d66b19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerIndicator
-  player: {fileID: 135730232777987885, guid: bccf393ec308e2c40b8a1914470206db, type: 3}
+  player: {fileID: 0}
   playerGridOffset: 0.1
   indicatorGridOffset: 0.5
   showOnNoTool: 1

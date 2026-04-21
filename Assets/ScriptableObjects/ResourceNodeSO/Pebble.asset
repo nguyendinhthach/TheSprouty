@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Pebble
   m_EditorClassIdentifier: Assembly-CSharp::ResourceNodeSO
   nodeName: Pebble
-  maxHealth: 5
+  maxHealth: 1
   prefab: {fileID: 5096974416068045832, guid: a72dc1537fa625f40b790e3deefdb84e, type: 3}

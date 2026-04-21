@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159af7465ceb26b45a479ed61d098e23, type: 3}
   m_Name: None
   m_EditorClassIdentifier: Assembly-CSharp::ToolSO
-  toolName: None
+  itemName: 
+  icon: {fileID: 0}
+  prefab: {fileID: 0}
   toolType: 0
   interactRange: 1
-  power: 5
+  power: 1

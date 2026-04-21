@@ -77,9 +77,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingLayerID: 1019341361
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7602030603486870866, guid: 2b0f93cb47140e64f9d1a4aa1c9f5e6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!1 &8845356514807093146
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.05, y: 0.3}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -169,7 +169,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2, y: 1.8}
+  m_Size: {x: 2, y: 0.9}
   m_EdgeRadius: 0
 --- !u!114 &3423202602651503703
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   destroyEffectDuration: 0.4
   flashCount: 3
   debrisPrefab: {fileID: 2821300661665969474, guid: 7d20322b325a3644ea9c5a4b04805470, type: 3}
-  debrisCount: 10
+  debrisCount: 6
   dropOnHit:
   - item: {fileID: 11400000, guid: a431c1d941d4ff342bea945b7b978d92, type: 2}
     minAmount: 1

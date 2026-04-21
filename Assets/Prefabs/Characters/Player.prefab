@@ -79,9 +79,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingLayerID: 1019341361
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2537848567546242354, guid: 6b5a26d7b3379b240bf16edb26b815b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!95 &7946323108246652537
 Animator:
   serializedVersion: 7
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becf7548385d07a4d8ef0fe8baf1c1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  gameInput: {fileID: 6783777560172355331, guid: 82653a1077b84f647a39fdc76c45fbcd, type: 3}
-  playerIndicator: {fileID: 62710058725928766, guid: 3d3532f0e86ceee469fc768f902582d7, type: 3}
+  gameInput: {fileID: 0}
+  playerIndicator: {fileID: 0}
   moveSpeed: 4
   equippedTool: {fileID: 11400000, guid: 783bfaed1e959094592b198e5e0af901, type: 2}
 --- !u!50 &5567006630849984997
