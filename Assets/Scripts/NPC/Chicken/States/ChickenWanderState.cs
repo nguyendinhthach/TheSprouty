@@ -1,33 +1,38 @@
 // ──────────────────────────────────────────────
 // TheSprouty | NPC/Chicken/States/ChickenWanderState.cs
-// Chicken walks to a random point inside the wander bounds.
+// Chicken walks to a random NavMesh point then returns to Idle.
 // ──────────────────────────────────────────────
-using UnityEngine;
 
 public class ChickenWanderState : BaseAnimalState<ChickenNPC>
 {
-    // ----------------------------------------------------------
-    // Private state
-    // ----------------------------------------------------------
-    private Vector2 _target;
-
-    // ----------------------------------------------------------
-    // Constructor
-    // ----------------------------------------------------------
     public ChickenWanderState(ChickenNPC owner) : base(owner) { }
 
-    // ----------------------------------------------------------
-    // IAnimalState
-    // ----------------------------------------------------------
     public override void Enter()
     {
-        _target = Owner.GetRandomWanderPoint();
+        Owner.Agent.speed = Owner.AnimalData.moveSpeed;
+        Owner.ResumeAgent();
+
+        if (Owner.TryGetRandomWanderPoint(out UnityEngine.Vector3 target))
+            Owner.Agent.SetDestination(target);
+        else
+            Owner.StateMachine.ChangeState(Owner.IdleState);
     }
 
     public override void Tick()
     {
-        bool arrived = Owner.MoveToward(_target);
-        if (arrived)
+        if (HasArrived())
             Owner.StateMachine.ChangeState(Owner.IdleState);
+    }
+
+    public override void Exit()
+    {
+        Owner.StopAgent();
+    }
+
+    private bool HasArrived()
+    {
+        return Owner.Agent.hasPath
+            && !Owner.Agent.pathPending
+            && Owner.Agent.remainingDistance <= Owner.Agent.stoppingDistance;
     }
 }

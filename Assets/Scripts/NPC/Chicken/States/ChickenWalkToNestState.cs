@@ -1,7 +1,7 @@
 // ──────────────────────────────────────────────
 // TheSprouty | NPC/Chicken/States/ChickenWalkToNestState.cs
-// Chicken walks toward the nest. When arrived,
-// transitions to JumpIntoNest.
+// Chicken picks an available nest and walks to it.
+// Aborts if nest becomes occupied while walking.
 // ──────────────────────────────────────────────
 
 public class ChickenWalkToNestState : BaseAnimalState<ChickenNPC>
@@ -10,15 +10,43 @@ public class ChickenWalkToNestState : BaseAnimalState<ChickenNPC>
 
     public override void Enter()
     {
-        // If no nest assigned, bail out immediately
-        if (Owner.NestZonePosition == (UnityEngine.Vector2)Owner.transform.position)
+        // Chọn tổ trống — nếu không có thì quay về Idle
+        if (!Owner.SelectAvailableNest())
+        {
             Owner.StateMachine.ChangeState(Owner.IdleState);
+            return;
+        }
+
+        Owner.Agent.speed = Owner.AnimalData.moveSpeed;
+        Owner.ResumeAgent();
+        Owner.Agent.SetDestination(Owner.NestZonePosition);
     }
 
     public override void Tick()
     {
-        bool arrived = Owner.MoveToward(Owner.NestZonePosition);
-        if (arrived)
+        // Tổ bị chiếm trong lúc đi → thử chọn tổ khác hoặc quay về Idle
+        if (!Owner.IsTargetNestAvailable)
+        {
+            if (Owner.SelectAvailableNest())
+                Owner.Agent.SetDestination(Owner.NestZonePosition);
+            else
+                Owner.StateMachine.ChangeState(Owner.IdleState);
+            return;
+        }
+
+        if (HasArrived())
             Owner.StateMachine.ChangeState(Owner.JumpIntoNestState);
+    }
+
+    public override void Exit()
+    {
+        Owner.StopAgent();
+    }
+
+    private bool HasArrived()
+    {
+        return Owner.Agent.hasPath
+            && !Owner.Agent.pathPending
+            && Owner.Agent.remainingDistance <= Owner.Agent.stoppingDistance;
     }
 }

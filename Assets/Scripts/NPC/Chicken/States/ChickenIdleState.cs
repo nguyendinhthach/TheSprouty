@@ -80,7 +80,7 @@ public class ChickenIdleState : BaseAnimalState<ChickenNPC>
         float rand = Random.value;
 
         // nestGoChance: gà quyết định đi đến nest (không cần phải đang ở gần)
-        if (rand < Owner.ChickenData.nestGoChance)
+        if (rand < Owner.ChickenData.nestGoChance && Owner.HasAnyNestAvailable)
         {
             Owner.StateMachine.ChangeState(Owner.WalkToNestState);
         }

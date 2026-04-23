@@ -15,5 +15,6 @@ public class ChickenJumpOutNestState : BaseAnimalState<ChickenNPC>
 
     public override void Exit()
     {
+        Owner.VacateNest();
     }
 }

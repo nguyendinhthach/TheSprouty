@@ -22,9 +22,10 @@ MonoBehaviour:
   fleeDuration: 1.5
   fleeDistance: 3
   nestGoChance: 0.1
-  nestSleepDuration: 50
-  sleepDuration: 30
+  nestSleepDuration: 40
+  sleepDuration: 20
   sleepChance: 0.15
+  happyCooldown: 5
   eatSubActionChance: 0.25
   eatSubActionIntervalMin: 2
   eatSubActionIntervalMax: 5
