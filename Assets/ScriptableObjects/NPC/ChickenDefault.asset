@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 818202f1337d06241bf38388355df7c3, type: 3}
   m_Name: ChickenDefault
   m_EditorClassIdentifier: Assembly-CSharp::ChickenDataSO
-  moveSpeed: 2
-  wanderRadiusMin: 1
+  moveSpeed: 1.5
+  wanderRadiusMin: 2
   wanderRadiusMax: 4
   idleTimeMin: 2
   idleTimeMax: 5
@@ -21,11 +21,11 @@ MonoBehaviour:
   fleeRadius: 2
   fleeDuration: 1.5
   fleeDistance: 3
-  nestGoChance: 0.1
-  nestSleepDuration: 40
-  sleepDuration: 20
-  sleepChance: 0.15
+  nestGoChance: 0.05
+  nestSleepDuration: 30
+  sleepDuration: 10
+  sleepChance: 0.1
   happyCooldown: 5
   eatSubActionChance: 0.25
   eatSubActionIntervalMin: 2
-  eatSubActionIntervalMax: 5
+  eatSubActionIntervalMax: 4

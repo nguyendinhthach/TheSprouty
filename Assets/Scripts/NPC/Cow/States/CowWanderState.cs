@@ -1,12 +1,12 @@
 // ──────────────────────────────────────────────
-// TheSprouty | NPC/Chicken/States/ChickenWanderState.cs
-// Chicken walks to a random NavMesh point then returns to Idle.
+// TheSprouty | NPC/Cow/States/CowWanderState.cs
+// Cow walks to a random NavMesh point then returns to Idle.
 // ──────────────────────────────────────────────
 using UnityEngine.AI;
 
-public class ChickenWanderState : BaseAnimalState<ChickenNPC>
+public class CowWanderState : BaseAnimalState<CowNPC>
 {
-    public ChickenWanderState(ChickenNPC owner) : base(owner) { }
+    public CowWanderState(CowNPC owner) : base(owner) { }
 
     public override void Enter()
     {

@@ -45,6 +45,7 @@ public class ChickenIdleState : BaseAnimalState<ChickenNPC>
         TryPlayEatSubAction();
 
         if (_idleTimer > 0f) return;
+        if (Owner.IsPlayingEatSubAction) return; // chờ Eat xong mới transition
 
         TransitionToNextState();
     }
@@ -60,6 +61,7 @@ public class ChickenIdleState : BaseAnimalState<ChickenNPC>
     {
         if (_eatSubActionTimer > 0f) return;
         if (Owner.ChickenData == null) return;
+
         if (!Owner.IsPlayingEatSubAction &&
             Random.value < Owner.ChickenData.eatSubActionChance)
         {

@@ -52,25 +52,27 @@ public class ChickenAnimator : MonoBehaviour
 
     private void Update()
     {
-        // While a sub-action (Eat) is playing, wait for it to finish
-        // then restore the idle animation.
-        if (_playingSubAction)
+        IAnimalState current = chicken.StateMachine.CurrentState;
+
+        // State changed → cancel sub-action, play new state animation immediately
+        if (current != _previousState)
         {
-            AnimatorStateInfo info = _animator.GetCurrentAnimatorStateInfo(0);
-            if (!info.IsName(ANIM_EAT) || (!info.loop && info.normalizedTime >= 1f))
-            {
-                _playingSubAction = false;
-                PlayAnimationForState(chicken.StateMachine.CurrentState);
-            }
+            _playingSubAction = false;
+            _previousState    = current;
+            PlayAnimationForState(current);
             return;
         }
 
-        // Drive animation from FSM state changes
-        IAnimalState current = chicken.StateMachine.CurrentState;
-        if (current == _previousState) return;
-
-        _previousState = current;
-        PlayAnimationForState(current);
+        // Sub-action: detect khi Eat xong rồi force re-trigger idle
+        if (_playingSubAction)
+        {
+            AnimatorStateInfo info = _animator.GetCurrentAnimatorStateInfo(0);
+            if (info.IsName(ANIM_EAT) && !info.loop && info.normalizedTime >= 0.95f)
+            {
+                _playingSubAction = false;
+                _previousState    = null; // force re-trigger next frame
+            }
+        }
     }
 
     // ----------------------------------------------------------
@@ -93,44 +95,24 @@ public class ChickenAnimator : MonoBehaviour
     // ----------------------------------------------------------
     private void PlayAnimationForState(IAnimalState state)
     {
-        switch (state)
+        string anim = state switch
         {
-            case ChickenIdleState idle:
-                _animator.Play(idle.UseBlinkVariant ? ANIM_BLINK_IDLE : ANIM_LOOK_AROUND);
-                break;
-            case ChickenWanderState _:
-                _animator.Play(ANIM_WANDER);
-                break;
-            case ChickenWalkToNestState _:
-                _animator.Play(ANIM_WANDER);
-                break;
-            case ChickenLayDownGrassState _:
-                _animator.Play(ANIM_LAY_DOWN_GRASS);
-                break;
-            case ChickenSleepGrassState _:
-                _animator.Play(ANIM_SLEEP_GRASS);
-                break;
-            case ChickenGetUpGrassState _:
-                _animator.Play(ANIM_GET_UP_GRASS);
-                break;
-            case ChickenJumpIntoNestState _:
-                _animator.Play(ANIM_JUMP_INTO_NEST);
-                break;
-            case ChickenSleepInNestState _:
-                _animator.Play(ANIM_SLEEP_IN_NEST);
-                break;
-            case ChickenJumpOutNestState _:
-                _animator.Play(ANIM_JUMP_OUT_NEST);
-                break;
-            case ChickenIncubatingState _:
-                _animator.Play(ANIM_INCUBATING);
-                break;
-            case ChickenFleeState _:
-                _animator.Play(ANIM_FLEE);
-                break;
-            case ChickenHappyState _:
-                _animator.Play(ANIM_HAPPY);
-                break;
-        }
+            ChickenIdleState        idle => idle.UseBlinkVariant ? ANIM_BLINK_IDLE : ANIM_LOOK_AROUND,
+            ChickenWanderState      _    => ANIM_WANDER,
+            ChickenWalkToNestState  _    => ANIM_WANDER,
+            ChickenLayDownGrassState _   => ANIM_LAY_DOWN_GRASS,
+            ChickenSleepGrassState  _    => ANIM_SLEEP_GRASS,
+            ChickenGetUpGrassState  _    => ANIM_GET_UP_GRASS,
+            ChickenJumpIntoNestState _   => ANIM_JUMP_INTO_NEST,
+            ChickenSleepInNestState _    => ANIM_SLEEP_IN_NEST,
+            ChickenJumpOutNestState _    => ANIM_JUMP_OUT_NEST,
+            ChickenIncubatingState  _    => ANIM_INCUBATING,
+            ChickenFleeState        _    => ANIM_FLEE,
+            ChickenHappyState       _    => ANIM_HAPPY,
+            _                            => null
+        };
+
+        if (anim != null)
+            _animator.Play(anim, -1, 0f);
     }
 }
