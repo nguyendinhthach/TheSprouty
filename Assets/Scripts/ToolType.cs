@@ -6,7 +6,7 @@ public enum ToolType
     Axe,
     Hoe,
     WateringCan,
-    Pickaxe,
+    FishingRod,
     Seeds
 }
     

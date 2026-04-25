@@ -109,6 +109,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleToolWheel"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffaaee1d-b118-4114-a103-afdacbff1d4d"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +261,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UseTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5d7d1e8-d318-4674-8088-c28e20599327"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleToolWheel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -841,6 +861,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_UseTool = m_Player.FindAction("UseTool", throwIfNotFound: true);
+        m_Player_ToggleToolWheel = m_Player.FindAction("ToggleToolWheel", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -936,6 +957,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_UseTool;
+    private readonly InputAction m_Player_ToggleToolWheel;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -955,6 +977,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/UseTool".
         /// </summary>
         public InputAction @UseTool => m_Wrapper.m_Player_UseTool;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ToggleToolWheel".
+        /// </summary>
+        public InputAction @ToggleToolWheel => m_Wrapper.m_Player_ToggleToolWheel;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -987,6 +1013,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @UseTool.started += instance.OnUseTool;
             @UseTool.performed += instance.OnUseTool;
             @UseTool.canceled += instance.OnUseTool;
+            @ToggleToolWheel.started += instance.OnToggleToolWheel;
+            @ToggleToolWheel.performed += instance.OnToggleToolWheel;
+            @ToggleToolWheel.canceled += instance.OnToggleToolWheel;
         }
 
         /// <summary>
@@ -1004,6 +1033,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @UseTool.started -= instance.OnUseTool;
             @UseTool.performed -= instance.OnUseTool;
             @UseTool.canceled -= instance.OnUseTool;
+            @ToggleToolWheel.started -= instance.OnToggleToolWheel;
+            @ToggleToolWheel.performed -= instance.OnToggleToolWheel;
+            @ToggleToolWheel.canceled -= instance.OnToggleToolWheel;
         }
 
         /// <summary>
@@ -1318,6 +1350,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnUseTool(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ToggleToolWheel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleToolWheel(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

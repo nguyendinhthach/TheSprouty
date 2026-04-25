@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
@@ -30,12 +31,14 @@ public class Player : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private ToolSO equippedTool;
 
+
     // ----------------------------------------------------------
     // Private state
     // ----------------------------------------------------------
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
     private ResourceNode _targetResource;
+    private bool _isPointerOverUI;
 
     // ----------------------------------------------------------
     // Read-only properties
@@ -44,7 +47,15 @@ public class Player : MonoBehaviour
     public Vector2 InputVector => _inputVector;
 
     public ToolType EquippedToolType => equippedTool.toolType;
+
+    public ToolSO EquippedToolSO => equippedTool;
+
     public int EquippedToolRange => equippedTool.interactRange;
+
+    public void ChangeEquippedTool(ToolSO newTool)
+    {
+        equippedTool = newTool;
+    }
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -65,7 +76,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
         _inputVector = gameInput.GetMovementVectorNormalized();
+        
     }
 
     private void FixedUpdate()
@@ -81,6 +94,7 @@ public class Player : MonoBehaviour
     /// action frame to apply the tool effect.</summary>
     public void PerformToolAction()
     {
+        if (_isPointerOverUI) return;
         _targetResource?.TakeDamage(equippedTool);
     }
 
@@ -90,11 +104,15 @@ public class Player : MonoBehaviour
         _targetResource = null;
     }
 
+    
+
     // ----------------------------------------------------------
     // Private event handlers
     // ----------------------------------------------------------
     private void OnUseToolInputReceived(object sender, EventArgs e)
     {
+        if (_isPointerOverUI) return;
+
         if (IsMoving) return;
 
         OnToolUsed?.Invoke(this, new ToolUsedEventArgs { ToolType = EquippedToolType });

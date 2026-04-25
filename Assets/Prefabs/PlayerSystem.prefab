@@ -281,7 +281,7 @@ MonoBehaviour:
   gameInput: {fileID: 2153365797870817182}
   playerIndicator: {fileID: 8818145148435535920}
   moveSpeed: 4
-  equippedTool: {fileID: 11400000, guid: 783bfaed1e959094592b198e5e0af901, type: 2}
+  equippedTool: {fileID: 11400000, guid: 7fd53173c23c3e94798f19cfbc9e23d1, type: 2}
 --- !u!50 &6395866951944024735
 Rigidbody2D:
   serializedVersion: 5

@@ -9,6 +9,8 @@ public class GameInput : MonoBehaviour
     // ----------------------------------------------------------
     public event EventHandler OnUseToolAction;
 
+    public event EventHandler OnToggleToolWheelAction;
+
     // ----------------------------------------------------------
     // Private state  (ENCAPSULATION)
     // ----------------------------------------------------------
@@ -19,6 +21,12 @@ public class GameInput : MonoBehaviour
         _inputActions = new InputSystem_Actions();
         _inputActions.Player.Enable();
         _inputActions.Player.UseTool.performed += OnUseToolPerformed;
+        _inputActions.Player.ToggleToolWheel.performed += ToggleToolWheel_performed;
+    }
+
+    private void ToggleToolWheel_performed(InputAction.CallbackContext obj)
+    {
+        OnToggleToolWheelAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void OnDestroy()
