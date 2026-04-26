@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Peach
   icon: {fileID: 851350370260654520, guid: 1740eda9b0976e248a67f609107a9214, type: 3}
-  prefab: {fileID: 172640680818024852, guid: b466b14cf220ee145adadd6d584e769b, type: 3}
+  prefab: {fileID: 4999791793908432810, guid: b466b14cf220ee145adadd6d584e769b, type: 3}
   maxStackSize: 99

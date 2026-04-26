@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40950fe5af00e7643bdbf8b9fd034442, type: 3}
+  m_Name: Lettuce
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: Lettuce
+  icon: {fileID: 6895149698704476563, guid: 58da7a566b12ef94ebba7b9f74d2fe9d, type: 3}
+  prefab: {fileID: 8016089760739038187, guid: 2c4db381485f3514992cc26f53f5944b, type: 3}
+  maxStackSize: 99

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Orange
   icon: {fileID: 3890171555231783473, guid: 1740eda9b0976e248a67f609107a9214, type: 3}
-  prefab: {fileID: 172640680818024852, guid: c394a781f888a8a4fa7916fb1f4ea1af, type: 3}
+  prefab: {fileID: 5182506203571878152, guid: c394a781f888a8a4fa7916fb1f4ea1af, type: 3}
   maxStackSize: 99

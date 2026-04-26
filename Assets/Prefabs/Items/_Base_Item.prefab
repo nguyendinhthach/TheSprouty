@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7339495097013048852}
   - component: {fileID: 6541638683129242188}
   - component: {fileID: 8890552293562906181}
+  - component: {fileID: 7529353912241104803}
   m_Layer: 0
   m_Name: _Base_Item
   m_TagString: Untagged
@@ -47,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemBounceObject
   duration: 0.5
-  jumpHeight: 1.2
+  jumpHeight: 1.5
 --- !u!114 &6541638683129242188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ed48a2b4079a346bbe69ceff141547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  attractSpeed: 8
+  attractSpeed: 5
   destroyDistance: 0.2
 --- !u!61 &8890552293562906181
 BoxCollider2D:
@@ -108,3 +109,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7529353912241104803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2417917787239889178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39aafbfbbfc9fe4479165770e95fadcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldItem
+  itemSO: {fileID: 0}

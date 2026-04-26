@@ -13,6 +13,15 @@ public class ItemPickup : MonoBehaviour
 
     private bool _isMagnetized;
     private Transform _playerTransform;
+    private ICollectable _collectable;
+
+    // ----------------------------------------------------------
+    // Unity lifecycle
+    // ----------------------------------------------------------
+    private void Awake()
+    {
+        _collectable = GetComponent<ICollectable>();
+    }
 
     private void Update()
     {
@@ -53,7 +62,7 @@ public class ItemPickup : MonoBehaviour
 
     private void Collect()
     {
-        // TODO: add to player inventory here
+        _collectable?.OnCollected();
         Destroy(gameObject);
     }
 }

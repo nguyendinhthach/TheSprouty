@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Apple
   icon: {fileID: -658478171088490457, guid: 1740eda9b0976e248a67f609107a9214, type: 3}
-  prefab: {fileID: 172640680818024852, guid: e2b15da70eef26b42ad4efbbcd0cb933, type: 3}
+  prefab: {fileID: 8821784488297560424, guid: e2b15da70eef26b42ad4efbbcd0cb933, type: 3}
   maxStackSize: 99
