@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Log
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Log
-  icon: {fileID: 0}
+  icon: {fileID: -3301210437103613180, guid: 2356b00af10ec1b479d9f3076cb9a37d, type: 3}
   prefab: {fileID: 7767158721802675567, guid: 4213d1ddcbaf862409e921b64d9e13cc, type: 3}
   maxStackSize: 99

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40950fe5af00e7643bdbf8b9fd034442, type: 3}
   m_Name: Lotus
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Apple
-  icon: {fileID: -658478171088490457, guid: 1740eda9b0976e248a67f609107a9214, type: 3}
-  prefab: {fileID: 8821784488297560424, guid: e2b15da70eef26b42ad4efbbcd0cb933, type: 3}
+  itemName: Lotus
+  icon: {fileID: -6803644669709754648, guid: 58da7a566b12ef94ebba7b9f74d2fe9d, type: 3}
+  prefab: {fileID: 4190974431727857508, guid: 1cc980c4ef950a1458de1b7754eaa361, type: 3}
   maxStackSize: 99
