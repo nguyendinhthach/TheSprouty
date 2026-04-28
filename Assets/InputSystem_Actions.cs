@@ -118,6 +118,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleInventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""b88e5919-5147-446c-9da4-7d9997f6fbb6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -272,6 +281,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ToggleToolWheel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0bdbfe0-a5c7-45d1-aca2-8381d2b8ac36"",
+                    ""path"": ""<Keyboard>/b"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -862,6 +882,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_UseTool = m_Player.FindAction("UseTool", throwIfNotFound: true);
         m_Player_ToggleToolWheel = m_Player.FindAction("ToggleToolWheel", throwIfNotFound: true);
+        m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -958,6 +979,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_UseTool;
     private readonly InputAction m_Player_ToggleToolWheel;
+    private readonly InputAction m_Player_ToggleInventory;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -981,6 +1003,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/ToggleToolWheel".
         /// </summary>
         public InputAction @ToggleToolWheel => m_Wrapper.m_Player_ToggleToolWheel;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/ToggleInventory".
+        /// </summary>
+        public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1016,6 +1042,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ToggleToolWheel.started += instance.OnToggleToolWheel;
             @ToggleToolWheel.performed += instance.OnToggleToolWheel;
             @ToggleToolWheel.canceled += instance.OnToggleToolWheel;
+            @ToggleInventory.started += instance.OnToggleInventory;
+            @ToggleInventory.performed += instance.OnToggleInventory;
+            @ToggleInventory.canceled += instance.OnToggleInventory;
         }
 
         /// <summary>
@@ -1036,6 +1065,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @ToggleToolWheel.started -= instance.OnToggleToolWheel;
             @ToggleToolWheel.performed -= instance.OnToggleToolWheel;
             @ToggleToolWheel.canceled -= instance.OnToggleToolWheel;
+            @ToggleInventory.started -= instance.OnToggleInventory;
+            @ToggleInventory.performed -= instance.OnToggleInventory;
+            @ToggleInventory.canceled -= instance.OnToggleInventory;
         }
 
         /// <summary>
@@ -1357,6 +1389,13 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnToggleToolWheel(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "ToggleInventory" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnToggleInventory(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

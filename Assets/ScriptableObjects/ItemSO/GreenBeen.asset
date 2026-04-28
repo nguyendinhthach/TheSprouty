@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40950fe5af00e7643bdbf8b9fd034442, type: 3}
-  m_Name: Cucumber
+  m_Name: GreenBeen
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Cucumber
+  itemName: Green Been
   icon: {fileID: -1495692990, guid: 58da7a566b12ef94ebba7b9f74d2fe9d, type: 3}
   prefab: {fileID: 3213691300362173517, guid: e57fcaa15f0b4ef4483012b2c295e674, type: 3}
   maxStackSize: 99

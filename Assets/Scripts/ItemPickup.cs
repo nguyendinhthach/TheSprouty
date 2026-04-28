@@ -25,8 +25,14 @@ public class ItemPickup : MonoBehaviour
 
     private void Update()
     {
-        if (!_isMagnetized || _playerTransform == null) return;
+        if (!CanBePickedUp) return;
 
+        // Check inventory có chỗ không trước khi bay
+        WorldItem worldItem = GetComponent<WorldItem>();
+        if (worldItem != null && !InventoryManager.Instance.HasSpace(worldItem.GetItemSO()))
+            return; // inventory đầy, dừng lại không bay
+
+        // magnet logic bình thường
         MoveTowardPlayer();
     }
 
@@ -50,6 +56,8 @@ public class ItemPickup : MonoBehaviour
 
     private void MoveTowardPlayer()
     {
+        if (_playerTransform == null) return;
+
         transform.position = Vector3.MoveTowards(
             transform.position,
             _playerTransform.position,

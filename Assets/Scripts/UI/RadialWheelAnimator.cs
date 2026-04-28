@@ -21,12 +21,15 @@ public class RadialWheelAnimator : MonoBehaviour
     // ----------------------------------------------------------
     private Vector2[] _targetPositions;
     private Coroutine _animRoutine;
+    private CanvasGroup _canvasGroup;
 
     // ----------------------------------------------------------
     // Unity lifecycle
     // ----------------------------------------------------------
     private void Awake()
     {
+        _canvasGroup = GetComponent<CanvasGroup>();
+
         _targetPositions = new Vector2[slots.Length];
         for (int i = 0; i < slots.Length; i++)
             _targetPositions[i] = slots[i].anchoredPosition;
@@ -39,7 +42,7 @@ public class RadialWheelAnimator : MonoBehaviour
     /// <summary>Enable wheel then animate slots flying out.</summary>
     public void Show()
     {
-        gameObject.SetActive(true);
+        SetActiveTrue();
         if (_animRoutine != null) StopCoroutine(_animRoutine);
         _animRoutine = StartCoroutine(AnimateRoutine(opening: true));
     }
@@ -49,7 +52,21 @@ public class RadialWheelAnimator : MonoBehaviour
     {
         if (_animRoutine != null) StopCoroutine(_animRoutine);
         _animRoutine = StartCoroutine(AnimateRoutine(opening: false, onComplete: () =>
-            gameObject.SetActive(false)));
+            SetActiveFalse()));
+    }
+
+    private void SetActiveTrue()
+    {
+        _canvasGroup.alpha = 1;
+        _canvasGroup.interactable = true;
+        _canvasGroup.blocksRaycasts = true;
+    }
+
+    private void SetActiveFalse()
+    {
+        _canvasGroup.alpha = 0;
+        _canvasGroup.interactable = false;
+        _canvasGroup.blocksRaycasts = false;
     }
 
     // ----------------------------------------------------------

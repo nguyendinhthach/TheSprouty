@@ -66,6 +66,10 @@ public class PlayerIndicator : MonoBehaviour
 
     private void SnapToGrid()
     {
+        // Bỏ qua nếu chuột ngoài màn hình
+        if (Input.mousePosition.x < 0 || Input.mousePosition.x > Screen.width ||
+            Input.mousePosition.y < 0 || Input.mousePosition.y > Screen.height) return;
+
         Vector3 mouseWorld = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
         Vector2Int mouseCell = new Vector2Int(

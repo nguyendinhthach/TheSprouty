@@ -20,6 +20,7 @@ public class WorldItem : MonoBehaviour, ICollectable
     // ----------------------------------------------------------
     // Public API
     // ----------------------------------------------------------
+    public ItemSO GetItemSO() => itemSO;
 
     /// <summary>
     /// Called by ItemPickup when the player collects this item.
@@ -29,6 +30,9 @@ public class WorldItem : MonoBehaviour, ICollectable
     {
         Debug.Log($"Collect: {ObjectName}");
 
-        // TODO: InventoryManager.Instance.Add(itemSO);
+        if (itemSO != null)
+        {
+            InventoryManager.Instance.AddItem(itemSO, 1);
+        }
     }
 }

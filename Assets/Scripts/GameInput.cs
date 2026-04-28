@@ -11,6 +11,8 @@ public class GameInput : MonoBehaviour
 
     public event EventHandler OnToggleToolWheelAction;
 
+    public event EventHandler OnToggleInventoryAction;
+
     // ----------------------------------------------------------
     // Private state  (ENCAPSULATION)
     // ----------------------------------------------------------
@@ -22,6 +24,12 @@ public class GameInput : MonoBehaviour
         _inputActions.Player.Enable();
         _inputActions.Player.UseTool.performed += OnUseToolPerformed;
         _inputActions.Player.ToggleToolWheel.performed += ToggleToolWheel_performed;
+        _inputActions.Player.ToggleInventory.performed += ToggleInventory_performed;
+    }
+
+    private void ToggleInventory_performed(InputAction.CallbackContext obj)
+    {
+        OnToggleInventoryAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void ToggleToolWheel_performed(InputAction.CallbackContext obj)
@@ -33,6 +41,8 @@ public class GameInput : MonoBehaviour
     {
         // Always unsubscribe to avoid memory leaks
         _inputActions.Player.UseTool.performed -= OnUseToolPerformed;
+        _inputActions.Player.ToggleToolWheel.performed -= ToggleToolWheel_performed;
+        _inputActions.Player.ToggleInventory.performed -= ToggleInventory_performed;
         _inputActions.Dispose();
     }
 
