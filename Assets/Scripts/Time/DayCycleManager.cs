@@ -83,6 +83,11 @@ public class DayCycleManager : MonoBehaviour
         AdvanceTime();
         CheckHourChanged();
         CheckForcedSleep();
+
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F))
+            SkipHours(2f);
+#endif
     }
 
     private void OnDestroy()
@@ -105,6 +110,22 @@ public class DayCycleManager : MonoBehaviour
 
         StartSleep();
         return true;
+    }
+
+    /// <summary>Skips time forward by the given number of hours. Wraps to next day if needed.</summary>
+    public void SkipHours(float hours)
+    {
+        _currentHour += hours;
+
+        if (_currentHour >= 24f)
+        {
+            _currentHour -= 24f;
+            _currentDay++;
+            OnDayPassed?.Invoke(this, _currentDay);
+        }
+
+        _lastHour = Mathf.FloorToInt(_currentHour);
+        OnHourChanged?.Invoke(this, _lastHour);
     }
 
     /// <summary>Returns a formatted string "HH:MM" for the current game time.</summary>
@@ -139,6 +160,7 @@ public class DayCycleManager : MonoBehaviour
 
     private void CheckForcedSleep()
     {
+        if (!dayCycleConfig.enableForcedSleep) return;
         if (Mathf.FloorToInt(_currentHour) >= dayCycleConfig.forcedSleepHour)
             StartSleep();
     }

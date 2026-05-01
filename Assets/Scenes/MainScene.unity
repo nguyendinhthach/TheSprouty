@@ -58256,6 +58256,7 @@ GameObject:
   - component: {fileID: 567163248}
   - component: {fileID: 567163250}
   - component: {fileID: 567163251}
+  - component: {fileID: 567163252}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -58319,7 +58320,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0b5466596d1af4a8624a92220b5ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DayCycleManager
-  dayCycleConfig: {fileID: 11400000, guid: 481a4ce0ca4fb864aa246c6fe08d9725, type: 2}
+  dayCycleConfig: {fileID: 11400000, guid: ce144802058eb3346a009ac463070b16, type: 2}
+--- !u!114 &567163252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 567163247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe086645f14a3a04fba1ae05cea205f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DaylightController
+  globalLight: {fileID: 619394801}
+  dayCycleConfig: {fileID: 11400000, guid: ce144802058eb3346a009ac463070b16, type: 2}
 --- !u!1001 &573004818
 PrefabInstance:
   m_ObjectHideFlags: 0
