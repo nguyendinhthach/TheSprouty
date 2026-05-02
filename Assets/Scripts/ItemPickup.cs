@@ -14,6 +14,7 @@ public class ItemPickup : MonoBehaviour
     private bool _isMagnetized;
     private Transform _playerTransform;
     private ICollectable _collectable;
+    private WorldItem _worldItem;
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -21,6 +22,7 @@ public class ItemPickup : MonoBehaviour
     private void Awake()
     {
         _collectable = GetComponent<ICollectable>();
+        _worldItem = GetComponent<WorldItem>();
     }
 
     private void Update()
@@ -28,8 +30,7 @@ public class ItemPickup : MonoBehaviour
         if (!CanBePickedUp) return;
 
         // Check inventory có chỗ không trước khi bay
-        WorldItem worldItem = GetComponent<WorldItem>();
-        if (worldItem != null && !InventoryManager.Instance.HasSpace(worldItem.GetItemSO()))
+        if (_worldItem != null && !InventoryManager.Instance.HasSpace(_worldItem.GetItemSO()))
         {
             // Chỉ notify khi item đang bị hút vào player
             if (_isMagnetized)

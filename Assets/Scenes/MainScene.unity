@@ -59001,7 +59001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d7daa34789e9514cb81ebab03c8a1f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  slotCount: 2
+  slotCount: 20
 --- !u!114 &567163251
 MonoBehaviour:
   m_ObjectHideFlags: 0

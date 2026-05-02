@@ -21,7 +21,6 @@ public class NotificationManager : MonoBehaviour
 
     [Header("Settings")]
     [SerializeField] private float displayDuration = 3f;
-    public float DisplayDuration => displayDuration;
     [SerializeField] private float mergeWindow = 2f;
     [SerializeField] private float hideBuffer = 1f;
 
@@ -91,6 +90,7 @@ public class NotificationManager : MonoBehaviour
     {
         _currentItem = item;
         _currentQuantity = quantity;
+        _currentMessage = null; // clear message khi show item notification
         _mergeTimer = mergeWindow;
         _displayTimer = displayDuration;
         _isShowing = true;
