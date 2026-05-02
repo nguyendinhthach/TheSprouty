@@ -7,6 +7,6 @@ public enum ToolType
     Hoe,
     WateringCan,
     FishingRod,
-    Seeds
+    SeedBag
 }
     

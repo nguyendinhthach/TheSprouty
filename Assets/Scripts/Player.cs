@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     // ----------------------------------------------------------
     public static Player Instance { get; private set; }
 
+    public SeedSO EquippedSeed { get; private set; }
+
     // ----------------------------------------------------------
     // Events
     // ----------------------------------------------------------
@@ -55,6 +57,11 @@ public class Player : MonoBehaviour
     public void ChangeEquippedTool(ToolSO newTool)
     {
         equippedTool = newTool;
+    }
+
+    public void EquipSeed(SeedSO seed)
+    {
+        EquippedSeed = seed;
     }
 
     // ----------------------------------------------------------

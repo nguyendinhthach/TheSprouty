@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a674b783545b544fb3a9f45f46b75d1, type: 3}
   m_Name: DayCycleSO
   m_EditorClassIdentifier: Assembly-CSharp::DayCycleSO
-  realSecondsPerGameDay: 120
+  realSecondsPerGameDay: 720
   earliestSleepHour: 19
   enableForcedSleep: 0
   forcedSleepHour: 22

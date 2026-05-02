@@ -6,6 +6,7 @@ public class RadialToolWheelUI : MonoBehaviour
     [Header("References")]
     [SerializeField] private SelectToolSlot[] toolSlots;
     [SerializeField] private RadialWheelAnimator wheelAnimator;
+    [SerializeField] private RadialSeedWheelUI radialSeedWheelUI;
 
     [Header("Dependencies")]
     [SerializeField] private GameInput gameInput;
@@ -36,6 +37,13 @@ public class RadialToolWheelUI : MonoBehaviour
     {
         if (InventoryUI.IsOpen) return;
 
+        // Nếu tầng 2 đang mở → đóng tầng 2, không toggle tầng 1
+        if (RadialSeedWheelUI.IsOpen)
+        {
+            radialSeedWheelUI.Close();
+            return;
+        }
+
         if (_isVisible)
         {
             _isVisible = false;
@@ -58,6 +66,14 @@ public class RadialToolWheelUI : MonoBehaviour
         {
             slot.SetSelected(slot == selectedSlot);
         }
+    }
+
+    public void Close()
+    {
+        _isVisible = false;
+        IsOpen = false;
+        wheelAnimator.Hide();
+        playerIndicator.gameObject.SetActive(true);
     }
 
     private void SetVisible(bool visible)
