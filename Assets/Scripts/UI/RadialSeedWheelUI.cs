@@ -20,7 +20,6 @@ public class RadialSeedWheelUI : MonoBehaviour
     // Private state
     // ----------------------------------------------------------
     private CanvasGroup _canvasGroup;
-    private bool _isVisible = false;
 
     public static bool IsOpen { get; private set; }
 
@@ -43,7 +42,6 @@ public class RadialSeedWheelUI : MonoBehaviour
 
     public void Open()
     {
-        _isVisible = true;
         IsOpen = true;
         wheelAnimator.Show();
         playerIndicator.gameObject.SetActive(false);
@@ -51,7 +49,6 @@ public class RadialSeedWheelUI : MonoBehaviour
 
     public void Close()
     {
-        _isVisible = false;
         IsOpen = false;
         wheelAnimator.Hide();
         playerIndicator.gameObject.SetActive(true);

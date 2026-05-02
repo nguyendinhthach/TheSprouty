@@ -30,9 +30,13 @@ public class ItemPickup : MonoBehaviour
         // Check inventory có chỗ không trước khi bay
         WorldItem worldItem = GetComponent<WorldItem>();
         if (worldItem != null && !InventoryManager.Instance.HasSpace(worldItem.GetItemSO()))
-            return; // inventory đầy, dừng lại không bay
+        {
+            // Chỉ notify khi item đang bị hút vào player
+            if (_isMagnetized)
+                NotificationManager.Instance.ShowMessage("Inventory Full");
+            return;
+        }
 
-        // magnet logic bình thường
         MoveTowardPlayer();
     }
 
@@ -43,6 +47,13 @@ public class ItemPickup : MonoBehaviour
         if (!other.CompareTag("Magnet")) return;
 
         Magnetize(other.transform);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Magnet")) return;
+        _isMagnetized = false;
+        _playerTransform = null;
     }
 
     // ----------------------------------------------------------

@@ -28,11 +28,11 @@ public class WorldItem : MonoBehaviour, ICollectable
     /// </summary>
     public void OnCollected()
     {
-        Debug.Log($"Collect: {ObjectName}");
-
         if (itemSO != null)
         {
-            InventoryManager.Instance.AddItem(itemSO, 1);
+            bool added = InventoryManager.Instance.AddItem(itemSO, 1);
+            if (added)
+                NotificationManager.Instance.ShowItemNotification(itemSO, 1);
         }
     }
 }
