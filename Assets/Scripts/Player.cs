@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     // ----------------------------------------------------------
     private Rigidbody2D _rb;
     private Vector2 _inputVector;
-    private ResourceNode _targetResource;
+    private IInteractable _currentTarget;
     private bool _isPointerOverUI;
 
     // ----------------------------------------------------------
@@ -102,13 +102,17 @@ public class Player : MonoBehaviour
     public void PerformToolAction()
     {
         if (_isPointerOverUI) return;
-        _targetResource?.TakeDamage(equippedTool);
+
+        if (EquippedToolType == ToolType.None)
+            (_currentTarget as IUsable)?.Use();
+        else
+            (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
     }
 
     /// <summary>Clears the target when the resource is destroyed.</summary>
     public void ClearTargetResource()
     {
-        _targetResource = null;
+        _currentTarget = null;
     }
 
     
@@ -134,6 +138,12 @@ public class Player : MonoBehaviour
 
     private void OnSelectedResourceChanged(object sender, PlayerIndicator.SelectedResourceChangedEventArgs e)
     {
-        _targetResource = e.SelectedResource;
+        _currentTarget = e.SelectedResource;
+    }
+
+    /// <summary>Clears the current interactable target (e.g. when a ResourceNode is destroyed).</summary>
+    public void ClearCurrentTarget()
+    {
+        _currentTarget = null;
     }
 }

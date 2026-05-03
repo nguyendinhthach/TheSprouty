@@ -171,13 +171,14 @@ public class DayCycleManager : MonoBehaviour
 
         _isSleeping = true;
         OnSleepStarted?.Invoke(this, EventArgs.Empty);
+        ScreenFader.Instance?.FadeOut(dayCycleConfig.fadeOutDuration);
         StartCoroutine(SleepRoutine());
     }
 
     private IEnumerator SleepRoutine()
     {
-        // Pause here — ClockUI / fade systems listen to OnSleepStarted
-        yield return new WaitForSeconds(1f);
+        // Wait for fade-out to complete before changing time
+        yield return new WaitForSeconds(dayCycleConfig.fadeOutDuration);
 
         _currentDay++;
         _currentHour = dayCycleConfig.wakeUpHour;
@@ -185,10 +186,12 @@ public class DayCycleManager : MonoBehaviour
 
         OnDayPassed?.Invoke(this, _currentDay);
 
-        yield return new WaitForSeconds(0.5f);
+        // Small pause at full black before waking
+        yield return new WaitForSeconds(0.3f);
 
         _isSleeping = false;
         OnSleepEnded?.Invoke(this, EventArgs.Empty);
+        ScreenFader.Instance?.FadeIn(dayCycleConfig.fadeInDuration);
     }
 
     private TimeOfDay EvaluateTimeOfDay(float hour)

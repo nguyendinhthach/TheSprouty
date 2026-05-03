@@ -36,6 +36,21 @@ public class DayCycleSO : ScriptableObject
     // Lighting
     // ----------------------------------------------------------
 
+    // ----------------------------------------------------------
+    // Fade settings
+    // ----------------------------------------------------------
+
+    [Header("Fade Settings")]
+    [Tooltip("Seconds to fade screen to black when sleeping.")]
+    public float fadeOutDuration = 1f;
+
+    [Tooltip("Seconds to fade screen back in when waking up.")]
+    public float fadeInDuration  = 1f;
+
+    // ----------------------------------------------------------
+    // Lighting
+    // ----------------------------------------------------------
+
     [Header("Lighting")]
     [Tooltip("Light color over 24h. Key 0 = 00:00, Key 1 = 24:00.")]
     public Gradient lightColorGradient;

@@ -10,7 +10,7 @@ public class PlayerIndicator : MonoBehaviour
 
     public class SelectedResourceChangedEventArgs : EventArgs
     {
-        public ResourceNode SelectedResource;
+        public IInteractable SelectedResource;
     }
 
     // ----------------------------------------------------------
@@ -32,7 +32,6 @@ public class PlayerIndicator : MonoBehaviour
     // ----------------------------------------------------------
     // Private state
     // ----------------------------------------------------------
-    private ResourceNode _currentTarget;
     private IInteractable _currentInteractable;
     private SpriteRenderer _spriteRenderer;
     private Camera _mainCamera;
@@ -97,25 +96,17 @@ public class PlayerIndicator : MonoBehaviour
     {
         Collider2D hit = Physics2D.OverlapPoint(transform.position, interactableLayerMask);
 
-        ResourceNode newTarget = hit != null ? hit.GetComponent<ResourceNode>() : null;
         IInteractable newInteractable = hit != null ? hit.GetComponent<IInteractable>() : null;
 
-        // Notify interface: exit old, enter new
-        if (newInteractable != _currentInteractable)
-        {
-            _currentInteractable?.OnIndicatorExit();
-            newInteractable?.OnIndicatorEnter();
-            _currentInteractable = newInteractable;
-        }
+        if (newInteractable == _currentInteractable) return;
 
-        // Notify event: only when ResourceNode target changes
-        if (newTarget != _currentTarget)
+        _currentInteractable?.OnIndicatorExit();
+        newInteractable?.OnIndicatorEnter();
+        _currentInteractable = newInteractable;
+
+        OnSelectedResourceNodeChanged?.Invoke(this, new SelectedResourceChangedEventArgs
         {
-            _currentTarget = newTarget;
-            OnSelectedResourceNodeChanged?.Invoke(this, new SelectedResourceChangedEventArgs
-            {
-                SelectedResource = _currentTarget
-            });
-        }
+            SelectedResource = _currentInteractable
+        });
     }
 }
