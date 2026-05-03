@@ -6,7 +6,7 @@ public class PlayerIndicator : MonoBehaviour
     // ----------------------------------------------------------
     // Events
     // ----------------------------------------------------------
-    public event EventHandler<SelectedResourceChangedEventArgs> OnSelectedResourceNodeChanged;
+    public event EventHandler<SelectedResourceChangedEventArgs> OnSelectedInteractableChanged;
 
     public class SelectedResourceChangedEventArgs : EventArgs
     {
@@ -104,7 +104,7 @@ public class PlayerIndicator : MonoBehaviour
         newInteractable?.OnIndicatorEnter();
         _currentInteractable = newInteractable;
 
-        OnSelectedResourceNodeChanged?.Invoke(this, new SelectedResourceChangedEventArgs
+        OnSelectedInteractableChanged?.Invoke(this, new SelectedResourceChangedEventArgs
         {
             SelectedResource = _currentInteractable
         });

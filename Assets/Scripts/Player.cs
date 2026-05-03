@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         gameInput.OnUseToolAction += OnUseToolInputReceived;
-        playerIndicator.OnSelectedResourceNodeChanged += OnSelectedResourceChanged;
+        playerIndicator.OnSelectedInteractableChanged += OnSelectedResourceChanged;
     }
 
     private void Update()
@@ -104,13 +104,21 @@ public class Player : MonoBehaviour
         if (_isPointerOverUI) return;
 
         if (EquippedToolType == ToolType.None)
-            (_currentTarget as IUsable)?.Use();
+        {
+            // Try IUsable first (bed, chest, NPC...), fallback to IDamageable (pebble, etc.)
+            if (_currentTarget is IUsable usable)
+                usable.Use();
+            else
+                (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
+        }
         else
+        {
             (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
+        }
     }
 
-    /// <summary>Clears the target when the resource is destroyed.</summary>
-    public void ClearTargetResource()
+    /// <summary>Clears the current interactable target (e.g. when a ResourceNode is destroyed).</summary>
+    public void ClearCurrentTarget()
     {
         _currentTarget = null;
     }
@@ -139,11 +147,5 @@ public class Player : MonoBehaviour
     private void OnSelectedResourceChanged(object sender, PlayerIndicator.SelectedResourceChangedEventArgs e)
     {
         _currentTarget = e.SelectedResource;
-    }
-
-    /// <summary>Clears the current interactable target (e.g. when a ResourceNode is destroyed).</summary>
-    public void ClearCurrentTarget()
-    {
-        _currentTarget = null;
     }
 }

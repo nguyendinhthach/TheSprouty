@@ -87,7 +87,7 @@ public abstract class ResourceNode : MonoBehaviour, IDamageable, IInteractable, 
     // ----------------------------------------------------------
     private void DestroyNode()
     {
-        Player.Instance.ClearTargetResource();
+        Player.Instance.ClearCurrentTarget();
         DropLoot();
         OnDestroyed();
 
