@@ -164,6 +164,7 @@ public class CropObject : MonoBehaviour, IInteractable, IDroppable, IUsable, IWa
         Destroy(gameObject);
     }
 
+    // NOTE: duplicated from ResourceNode.SpawnDrops() — refactor to shared utility when scope grows
     private void SpawnDrops(DropEntry entry, int amount)
     {
         if (entry.item?.prefab == null) return;

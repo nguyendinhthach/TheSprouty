@@ -109,6 +109,7 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
         {
             case FarmTileState.GrassDirt: SetState(cell, FarmTileState.Dirt);       break;
             case FarmTileState.Dirt:      SetState(cell, FarmTileState.TilledDirt); break;
+            case FarmTileState.HasCrop:   return; // cannot hoe a tile with a crop
         }
     }
 
@@ -120,18 +121,7 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
     /// Waters the cell under the PlayerIndicator if it is Dirt or TilledDirt.
     /// GrassDirt cannot be watered. Already-watered cells are ignored.
     /// </summary>
-    public void Water(ToolSO tool)
-    {
-        Vector3Int cell  = GetIndicatorCell();
-        FarmTileState state = GetState(cell);
-
-        if (state == FarmTileState.GrassDirt)  return;
-        if (_wateredCells.Contains(cell))       return;
-
-        _wateredCells.Add(cell);
-        _tilemap.SetColor(cell, wateredTint);
-        ApplyTintToMark(cell, wateredTint);
-    }
+    public void Water(ToolSO tool) => ApplyWater(GetIndicatorCell());
 
     // ----------------------------------------------------------
     // Public API
@@ -191,16 +181,7 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
     /// Directly waters a specific cell. Called by CropObject.Water()
     /// when the crop is the detected IInteractable target.
     /// </summary>
-    public void SetWatered(Vector3Int cell)
-    {
-        FarmTileState state = GetState(cell);
-        if (state == FarmTileState.GrassDirt)  return;
-        if (_wateredCells.Contains(cell))       return;
-
-        _wateredCells.Add(cell);
-        _tilemap.SetColor(cell, wateredTint);
-        ApplyTintToMark(cell, wateredTint);
-    }
+    public void SetWatered(Vector3Int cell) => ApplyWater(cell);
 
     /// <summary>
     /// Sets a cell to a given state, updates tile visuals and manages tilled marks.
@@ -296,6 +277,16 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
     private Vector3Int GetIndicatorCell()
     {
         return _tilemap.WorldToCell(playerIndicator.transform.position);
+    }
+
+    private void ApplyWater(Vector3Int cell)
+    {
+        if (GetState(cell) == FarmTileState.GrassDirt) return;
+        if (_wateredCells.Contains(cell))              return;
+
+        _wateredCells.Add(cell);
+        _tilemap.SetColor(cell, wateredTint);
+        ApplyTintToMark(cell, wateredTint);
     }
 
     private void SpawnTilledMark(Vector3Int cell)

@@ -81,6 +81,12 @@ public class Player : MonoBehaviour
         playerIndicator.OnSelectedInteractableChanged += OnSelectedResourceChanged;
     }
 
+    private void OnDestroy()
+    {
+        gameInput.OnUseToolAction -= OnUseToolInputReceived;
+        playerIndicator.OnSelectedInteractableChanged -= OnSelectedResourceChanged;
+    }
+
     private void Update()
     {
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
