@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c22e79f1ace97c4e8996a86f64c2530, type: 3}
+  m_Name: TurnipCrop
+  m_EditorClassIdentifier: Assembly-CSharp::CropDataSO
+  cropName: Turnip Crop
+  stages:
+  - sprite: {fileID: 8764029024336308573, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 21
+  - sprite: {fileID: 148012229996709633, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 23
+  - sprite: {fileID: -7574556534369598227, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 26
+  - sprite: {fileID: 6165657481621290884, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 0
+  unwateredSlowdownMultiplier: 2
+  yield:
+  - item: {fileID: 11400000, guid: bbb3e1d42d170de48839a9cf85605b5a, type: 2}
+    minAmount: 1
+    maxAmount: 1
+    dropChance: 100

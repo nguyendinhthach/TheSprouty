@@ -58973,6 +58973,7 @@ MonoBehaviour:
   grassDirtTile: {fileID: 11400000, guid: a3c743cb8c3fd364785339a6d27e6b60, type: 2}
   dirtTile: {fileID: 11400000, guid: 21442da9adc15a54facbf264057f8724, type: 2}
   tilledMarkPrefab: {fileID: 141889463159492654, guid: 66de40e297bd1e44e9f5a142fa8de742, type: 3}
+  cropObjectPrefab: {fileID: 7381214155141638640, guid: 4f5079f006b98624f833cda6586d26c4, type: 3}
   wateredTint: {r: 0.85, g: 0.85, b: 0.85, a: 1}
   dirtRevertHours: 25
 --- !u!19719996 &570234561

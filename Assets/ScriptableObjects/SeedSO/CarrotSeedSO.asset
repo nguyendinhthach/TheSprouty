@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Carrot Seed
+  cropData: {fileID: 11400000, guid: 17c949821c75a1244a69e3cbd52523fc, type: 2}

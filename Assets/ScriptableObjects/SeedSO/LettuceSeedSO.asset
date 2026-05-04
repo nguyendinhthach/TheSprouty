@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Lettuce Seed
+  cropData: {fileID: 11400000, guid: 467e3881cac00de4fb374fe611e85c8d, type: 2}

@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Corn Seed
+  cropData: {fileID: 11400000, guid: 3f7540273dfc8674684d4f64a3dcea7a, type: 2}

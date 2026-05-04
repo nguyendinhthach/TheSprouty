@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c22e79f1ace97c4e8996a86f64c2530, type: 3}
+  m_Name: CornCrop
+  m_EditorClassIdentifier: Assembly-CSharp::CropDataSO
+  cropName: Corn Crop
+  stages:
+  - sprite: {fileID: 6194069981415278876, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 24
+  - sprite: {fileID: 1302930124755786175, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 26
+  - sprite: {fileID: -7528199513585423542, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 30
+  - sprite: {fileID: 736865317306615500, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 32
+  - sprite: {fileID: 3482569451149137530, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 0
+  unwateredSlowdownMultiplier: 2
+  yield:
+  - item: {fileID: 11400000, guid: 72a20d3a709b129459d7c6a36642e8c8, type: 2}
+    minAmount: 2
+    maxAmount: 3
+    dropChance: 100

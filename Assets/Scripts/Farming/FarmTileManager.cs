@@ -10,7 +10,7 @@ using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Tilemap))]
 [RequireComponent(typeof(TilemapCollider2D))]
-public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterable
+public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterable, IPlantable
 {
     // ----------------------------------------------------------
     // Serialized fields
@@ -29,6 +29,10 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
     [Header("Tilled Mark")]
     [Tooltip("Prefab spawned on top of the dirt tile after 2nd Hoe hit (plow marks visual).")]
     [SerializeField] private GameObject tilledMarkPrefab;
+
+    [Header("Crop")]
+    [Tooltip("Base prefab for all CropObjects. Must have CropObject component + SpriteRenderer.")]
+    [SerializeField] private GameObject cropObjectPrefab;
 
     [Header("Watering")]
     [Tooltip("Tint applied to a cell when watered. Pure dark grey = just darker, no hue shift.")]
@@ -121,24 +125,12 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
         Vector3Int cell  = GetIndicatorCell();
         FarmTileState state = GetState(cell);
 
-        Debug.Log($"[FarmTile] Water() called | cell={cell} | state={state} | alreadyWatered={_wateredCells.Contains(cell)}");
-
-        if (state == FarmTileState.GrassDirt)
-        {
-            Debug.Log("[FarmTile] Water() ignored — cell is GrassDirt");
-            return;
-        }
-
-        if (_wateredCells.Contains(cell))
-        {
-            Debug.Log("[FarmTile] Water() ignored — already watered today");
-            return;
-        }
+        if (state == FarmTileState.GrassDirt)  return;
+        if (_wateredCells.Contains(cell))       return;
 
         _wateredCells.Add(cell);
         _tilemap.SetColor(cell, wateredTint);
         ApplyTintToMark(cell, wateredTint);
-        Debug.Log($"[FarmTile] Cell {cell} watered — tint applied.");
     }
 
     // ----------------------------------------------------------
@@ -155,6 +147,60 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
 
     /// <summary>Returns true if the cell has been watered today.</summary>
     public bool IsWatered(Vector3Int cell) => _wateredCells.Contains(cell);
+
+    // ----------------------------------------------------------
+    // IPlantable — SeedBag tool
+    // ----------------------------------------------------------
+
+    /// <summary>
+    /// Plants a seed on the cell under the PlayerIndicator.
+    /// Requires TilledDirt state, seed in inventory, and valid CropData.
+    /// </summary>
+    public void Plant(SeedSO seed)
+    {
+        if (seed == null || seed.cropData == null)
+        {
+            Debug.LogWarning("[FarmTile] Plant() called with null seed or missing CropData.");
+            return;
+        }
+
+        Vector3Int cell = GetIndicatorCell();
+        FarmTileState cellState = GetState(cell);
+
+        if (cellState != FarmTileState.TilledDirt) return;
+
+        // TODO: uncomment when inventory is wired up properly
+        // if (!InventoryManager.Instance.HasItem(seed))
+        // {
+        //     Debug.Log("[FarmTile] Plant() ignored — no seed in inventory.");
+        //     return;
+        // }
+        // InventoryManager.Instance.RemoveItem(seed, 1);
+
+        // Spawn CropObject at cell center
+        Vector3 worldCenter = _tilemap.GetCellCenterWorld(cell);
+        GameObject cropGO   = Instantiate(cropObjectPrefab, worldCenter, Quaternion.identity);
+        CropObject crop     = cropGO.GetComponent<CropObject>();
+        crop.Initialise(seed.cropData, this, cell);
+
+        SetState(cell, FarmTileState.HasCrop);
+
+    }
+
+    /// <summary>
+    /// Directly waters a specific cell. Called by CropObject.Water()
+    /// when the crop is the detected IInteractable target.
+    /// </summary>
+    public void SetWatered(Vector3Int cell)
+    {
+        FarmTileState state = GetState(cell);
+        if (state == FarmTileState.GrassDirt)  return;
+        if (_wateredCells.Contains(cell))       return;
+
+        _wateredCells.Add(cell);
+        _tilemap.SetColor(cell, wateredTint);
+        ApplyTintToMark(cell, wateredTint);
+    }
 
     /// <summary>
     /// Sets a cell to a given state, updates tile visuals and manages tilled marks.
@@ -183,11 +229,15 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
                 break;
 
             case FarmTileState.TilledDirt:
-                // Preserve watered tint if cell was already watered
                 _tilemap.SetColor(cell, _wateredCells.Contains(cell) ? wateredTint : Color.white);
                 _tileStates[cell] = FarmTileState.TilledDirt;
                 _dirtCreatedAtHour.Remove(cell);
                 SpawnTilledMark(cell);
+                break;
+
+            case FarmTileState.HasCrop:
+                _tileStates[cell] = FarmTileState.HasCrop;
+                RemoveTilledMark(cell); // crop object is now the visual
                 break;
         }
     }
@@ -213,7 +263,6 @@ public class FarmTileManager : MonoBehaviour, IInteractable, ITillable, IWaterab
         foreach (Vector3Int cell in cells)
         {
             int elapsed = currentTotal - _dirtCreatedAtHour[cell];
-            Debug.Log($"[FarmTile] Cell {cell} — {elapsed}/{dirtRevertHours}h elapsed.");
 
             if (elapsed >= dirtRevertHours)
                 toRevert.Add(cell);

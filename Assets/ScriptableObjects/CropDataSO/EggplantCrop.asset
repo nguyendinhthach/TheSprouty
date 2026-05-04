@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c22e79f1ace97c4e8996a86f64c2530, type: 3}
+  m_Name: EggplantCrop
+  m_EditorClassIdentifier: Assembly-CSharp::CropDataSO
+  cropName: Eggplant Crop
+  stages:
+  - sprite: {fileID: 1774109583823818138, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 22
+  - sprite: {fileID: -3183003883038844764, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 24
+  - sprite: {fileID: -8813222334067813782, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 28
+  - sprite: {fileID: 3220655293762564766, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 0
+  unwateredSlowdownMultiplier: 2
+  yield:
+  - item: {fileID: 11400000, guid: 874e994d436f6114491af478886d96e8, type: 2}
+    minAmount: 1
+    maxAmount: 1
+    dropChance: 100

@@ -1,7 +1,7 @@
 // ──────────────────────────────────────────────
 // TheSprouty | Items/SeedSO.cs
 // ScriptableObject for seed items. Extends ItemSO.
-// Holds seed-specific data for the farming system.
+// Links an inventory seed item to its CropDataSO.
 // ──────────────────────────────────────────────
 using UnityEngine;
 
@@ -11,5 +11,6 @@ public class SeedSO : ItemSO
     [Header("Seed Info")]
     public string seedName;
 
-    // TODO: add CropDataSO reference when farming system is ready
+    [Tooltip("Crop data that this seed grows into.")]
+    public CropDataSO cropData;
 }

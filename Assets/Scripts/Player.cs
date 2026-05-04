@@ -118,8 +118,11 @@ public class Player : MonoBehaviour
                 break;
 
             case ToolType.WateringCan:
-                Debug.Log($"[Player] WateringCan action | target={_currentTarget?.GetType().Name ?? "NULL"}");
                 (_currentTarget as IWaterable)?.Water(equippedTool);
+                break;
+
+            case ToolType.SeedBag:
+                (_currentTarget as IPlantable)?.Plant(EquippedSeed);
                 break;
 
             default:
@@ -147,9 +150,11 @@ public class Player : MonoBehaviour
 
         OnToolUsed?.Invoke(this, new ToolUsedEventArgs { ToolType = EquippedToolType });
 
-        // Nếu tay không (None) thì không có animation event
-        // → gọi PerformToolAction trực tiếp luôn
-        if (EquippedToolType == ToolType.None)
+        // Tools không có animation event → gọi PerformToolAction trực tiếp
+        bool noAnimationEvent = EquippedToolType == ToolType.None
+                             || EquippedToolType == ToolType.SeedBag;
+
+        if (noAnimationEvent)
         {
             PerformToolAction();
         }

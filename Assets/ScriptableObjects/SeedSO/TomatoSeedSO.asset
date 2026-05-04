@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Tomato Seed
+  cropData: {fileID: 11400000, guid: 079eb7ef1cc843b41a3af1d0c97d7b48, type: 2}

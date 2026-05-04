@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c22e79f1ace97c4e8996a86f64c2530, type: 3}
+  m_Name: WheatCrop
+  m_EditorClassIdentifier: Assembly-CSharp::CropDataSO
+  cropName: Wheat Crop
+  stages:
+  - sprite: {fileID: -797183112896774214, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 22
+  - sprite: {fileID: -8226948184702604985, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 26
+  - sprite: {fileID: -4471035681727069231, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 30
+  - sprite: {fileID: -7536419532554554813, guid: bbeedc1c37949ab468e8beb9230628cc, type: 3}
+    hoursToNextStage: 0
+  unwateredSlowdownMultiplier: 2
+  yield:
+  - item: {fileID: 11400000, guid: 9edaf2d7a43f38840a079e98cd439511, type: 2}
+    minAmount: 2
+    maxAmount: 3
+    dropChance: 100

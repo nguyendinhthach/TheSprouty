@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Eggplant Seed
+  cropData: {fileID: 11400000, guid: c582de6d3181d16499cae1f7ce6e4202, type: 2}

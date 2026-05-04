@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Wheat Seed
+  cropData: {fileID: 11400000, guid: aed58febe4cfea64eb06727da6fe2e6f, type: 2}

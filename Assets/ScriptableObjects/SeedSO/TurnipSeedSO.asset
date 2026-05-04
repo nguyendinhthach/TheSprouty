@@ -17,3 +17,4 @@ MonoBehaviour:
   prefab: {fileID: 0}
   maxStackSize: 99
   seedName: Turnip Seed
+  cropData: {fileID: 11400000, guid: 7659c31f6ed0ad74aa4d44833157bd39, type: 2}
