@@ -115,6 +115,7 @@ public class DayCycleManager : MonoBehaviour
     /// <summary>Skips time forward by the given number of hours. Wraps to next day if needed.</summary>
     public void SkipHours(float hours)
     {
+        float fromHour = _currentHour;
         _currentHour += hours;
 
         if (_currentHour >= 24f)
@@ -125,7 +126,7 @@ public class DayCycleManager : MonoBehaviour
         }
 
         _lastHour = Mathf.FloorToInt(_currentHour);
-        OnHourChanged?.Invoke(this, _lastHour);
+        FireHoursChanged(fromHour, hours);
     }
 
     /// <summary>Returns a formatted string "HH:MM" for the current game time.</summary>
@@ -180,11 +181,17 @@ public class DayCycleManager : MonoBehaviour
         // Wait for fade-out to complete before changing time
         yield return new WaitForSeconds(dayCycleConfig.fadeOutDuration);
 
+        float fromHour   = _currentHour;
+        float hoursSlept = _currentHour <= dayCycleConfig.wakeUpHour
+            ? dayCycleConfig.wakeUpHour - _currentHour
+            : (24f - _currentHour) + dayCycleConfig.wakeUpHour;
+
         _currentDay++;
         _currentHour = dayCycleConfig.wakeUpHour;
         _lastHour    = dayCycleConfig.wakeUpHour;
 
         OnDayPassed?.Invoke(this, _currentDay);
+        FireHoursChanged(fromHour, hoursSlept);
 
         // Small pause at full black before waking
         yield return new WaitForSeconds(0.3f);
@@ -192,6 +199,20 @@ public class DayCycleManager : MonoBehaviour
         _isSleeping = false;
         OnSleepEnded?.Invoke(this, EventArgs.Empty);
         ScreenFader.Instance?.FadeIn(dayCycleConfig.fadeInDuration);
+    }
+
+    /// <summary>
+    /// Fires OnHourChanged once per integer hour crossed when time is skipped.
+    /// Ensures systems like FarmTileManager count hours correctly on skip/sleep.
+    /// </summary>
+    private void FireHoursChanged(float fromHour, float hoursSkipped)
+    {
+        int count = Mathf.FloorToInt(hoursSkipped);
+        for (int i = 1; i <= count; i++)
+        {
+            int h = Mathf.FloorToInt(fromHour + i) % 24;
+            OnHourChanged?.Invoke(this, h);
+        }
     }
 
     private TimeOfDay EvaluateTimeOfDay(float hour)

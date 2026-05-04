@@ -282,6 +282,7 @@ MonoBehaviour:
   playerIndicator: {fileID: 8818145148435535920}
   moveSpeed: 4
   equippedTool: {fileID: 11400000, guid: 7fd53173c23c3e94798f19cfbc9e23d1, type: 2}
+  _debugCurrentTarget: None
 --- !u!50 &6395866951944024735
 Rigidbody2D:
   serializedVersion: 5
@@ -457,6 +458,9 @@ MonoBehaviour:
   interactableLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  farmLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &8319039219753788606
 GameObject:
   m_ObjectHideFlags: 0

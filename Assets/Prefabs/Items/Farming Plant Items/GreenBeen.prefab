@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1019341361
   m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1495692990, guid: 58da7a566b12ef94ebba7b9f74d2fe9d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2417917787239889178, guid: 59685328d9a180f43b0031050c08e752, type: 3}
       propertyPath: m_Name
-      value: Cucumber
+      value: GreenBeen
       objectReference: {fileID: 0}
     - target: {fileID: 7529353912241104803, guid: 59685328d9a180f43b0031050c08e752, type: 3}
       propertyPath: itemSO

@@ -39,10 +39,12 @@ public class GameInput : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Always unsubscribe to avoid memory leaks
+        if (_inputActions == null) return;
+
         _inputActions.Player.UseTool.performed -= OnUseToolPerformed;
         _inputActions.Player.ToggleToolWheel.performed -= ToggleToolWheel_performed;
         _inputActions.Player.ToggleInventory.performed -= ToggleInventory_performed;
+        _inputActions.Player.Disable(); // required before Dispose to suppress InputSystem leak warning
         _inputActions.Dispose();
     }
 

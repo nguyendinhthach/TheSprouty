@@ -27,7 +27,11 @@ public class PlayerIndicator : MonoBehaviour
     [SerializeField] private bool showOnNoTool = true;
 
     [Header("Detection")]
+    [Tooltip("Layer mask for regular interactables (resources, NPCs, objects).")]
     [SerializeField] private LayerMask interactableLayerMask;
+    [Tooltip("Layer mask for farm tiles (FarmTile layer). Checked separately so farm tiles" +
+             " don't interfere with regular interactable priority.")]
+    [SerializeField] private LayerMask farmLayerMask;
 
     // ----------------------------------------------------------
     // Private state
@@ -94,7 +98,9 @@ public class PlayerIndicator : MonoBehaviour
 
     private void DetectInteractable()
     {
-        Collider2D hit = Physics2D.OverlapPoint(transform.position, interactableLayerMask);
+        // Regular interactables take priority over farm tiles
+        Collider2D hit = Physics2D.OverlapPoint(transform.position, interactableLayerMask)
+                      ?? Physics2D.OverlapPoint(transform.position, farmLayerMask);
 
         IInteractable newInteractable = hit != null ? hit.GetComponent<IInteractable>() : null;
 

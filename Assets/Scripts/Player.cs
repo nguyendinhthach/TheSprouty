@@ -103,17 +103,28 @@ public class Player : MonoBehaviour
     {
         if (_isPointerOverUI) return;
 
-        if (EquippedToolType == ToolType.None)
+        switch (EquippedToolType)
         {
-            // Try IUsable first (bed, chest, NPC...), fallback to IDamageable (pebble, etc.)
-            if (_currentTarget is IUsable usable)
-                usable.Use();
-            else
+            case ToolType.None:
+                // Try IUsable first (bed, chest, NPC...), fallback to IDamageable (pebble, etc.)
+                if (_currentTarget is IUsable usable)
+                    usable.Use();
+                else
+                    (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
+                break;
+
+            case ToolType.Hoe:
+                (_currentTarget as ITillable)?.Till(equippedTool);
+                break;
+
+            case ToolType.WateringCan:
+                Debug.Log($"[Player] WateringCan action | target={_currentTarget?.GetType().Name ?? "NULL"}");
+                (_currentTarget as IWaterable)?.Water(equippedTool);
+                break;
+
+            default:
                 (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
-        }
-        else
-        {
-            (_currentTarget as IDamageable)?.TakeDamage(equippedTool);
+                break;
         }
     }
 
@@ -147,5 +158,14 @@ public class Player : MonoBehaviour
     private void OnSelectedResourceChanged(object sender, PlayerIndicator.SelectedResourceChangedEventArgs e)
     {
         _currentTarget = e.SelectedResource;
+#if UNITY_EDITOR
+        _debugCurrentTarget = _currentTarget != null
+            ? _currentTarget.GetType().Name
+            : "None";
+#endif
     }
+
+#if UNITY_EDITOR
+    [SerializeField] private string _debugCurrentTarget = "None";
+#endif
 }
