@@ -17,6 +17,10 @@ MonoBehaviour:
   wanderRadiusMax: 5
   idleTimeMin: 2
   idleTimeMax: 5
+  productItem: {fileID: 11400000, guid: 659f120930a674d4a952e9c97cc2f0fa, type: 2}
+  productAmount: 1
+  productionHoursMin: 22
+  productionHoursMax: 30
   interactRadius: 2
   happyCooldown: 5
   sleepChance: 0.1

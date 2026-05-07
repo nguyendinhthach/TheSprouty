@@ -14,6 +14,10 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     // ----------------------------------------------------------
     [SerializeField, HideInInspector] protected AnimalNPCSO animalData;
 
+    [Header("Save")]
+    [Tooltip("Stable ID for save/load — unique in the scene. Auto-generate via TheSprouty → Tools menu.")]
+    [SerializeField] private string npcID;
+
     // ----------------------------------------------------------
     // Properties
     // ----------------------------------------------------------
@@ -22,10 +26,23 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     public virtual AnimalNPCSO AnimalData  => animalData;
 
     // ----------------------------------------------------------
+    // Properties
+    // ----------------------------------------------------------
+    public string NPCID                    => npcID;
+    public float  ProductionHoursRemaining => _productionHoursRemaining;
+
+    // ----------------------------------------------------------
     // Private state
     // ----------------------------------------------------------
     private SpriteRenderer _spriteRenderer;
     private Animator       _animator;
+    private float          _productionHoursRemaining;
+
+    /// <summary>
+    /// Holds hours loaded from save until ResetProductionTimer() consumes it.
+    /// -1 means no saved value — use random instead.
+    /// </summary>
+    private float _pendingProductionHours = -1f;
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -45,6 +62,11 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     protected virtual void Start()
     {
         StartCoroutine(InitializeAgentRoutine());
+    }
+
+    protected virtual void OnDestroy()
+    {
+        UnsubscribeProduction();
     }
 
     protected virtual void Update()
@@ -90,6 +112,22 @@ public abstract class BaseAnimalNPC : MonoBehaviour
 
         result = transform.position;
         return false;
+    }
+
+    // ----------------------------------------------------------
+    // Public API — Save/Load
+    // ----------------------------------------------------------
+
+    /// <summary>
+    /// Restores position and production timer from save data.
+    /// Called by SaveManager before InitializeAgentRoutine completes —
+    /// position is applied immediately, production hours are consumed by
+    /// ResetProductionTimer() when the coroutine initializes the agent.
+    /// </summary>
+    public void LoadNPCState(Vector3 position, float productionHours)
+    {
+        transform.position      = position;
+        _pendingProductionHours = productionHours;
     }
 
     /// <summary>Safely stop the NavMeshAgent — no-op if not on a NavMesh.</summary>
@@ -142,11 +180,74 @@ public abstract class BaseAnimalNPC : MonoBehaviour
         Agent.Warp(transform.position);
         yield return null;
         InitializeStates();
+        SubscribeProduction();
+        ResetProductionTimer();
     }
 
     private void FaceMovementDirection()
     {
         if (Agent.isOnNavMesh && Agent.velocity.sqrMagnitude > 0.01f)
             FaceDirection(Agent.velocity);
+    }
+
+    private void SubscribeProduction()
+    {
+        if (AnimalData == null || AnimalData.productItem == null) return;
+        if (DayCycleManager.Instance == null) return;
+        DayCycleManager.Instance.OnHourChanged += OnHourChanged;
+    }
+
+    private void UnsubscribeProduction()
+    {
+        if (DayCycleManager.Instance == null) return;
+        DayCycleManager.Instance.OnHourChanged -= OnHourChanged;
+    }
+
+    private void OnHourChanged(object sender, int hour)
+    {
+        if (AnimalData == null || AnimalData.productItem == null) return;
+        _productionHoursRemaining--;
+        if (_productionHoursRemaining <= 0f)
+        {
+            SpawnProductItem();
+            ResetProductionTimer();
+        }
+    }
+
+    private void ResetProductionTimer()
+    {
+        if (_pendingProductionHours > 0f)
+        {
+            // Restore saved value — don't randomize on load
+            _productionHoursRemaining = _pendingProductionHours;
+            _pendingProductionHours   = -1f;
+            return;
+        }
+
+        if (AnimalData == null) return;
+        _productionHoursRemaining = Random.Range(
+            AnimalData.productionHoursMin,
+            AnimalData.productionHoursMax
+        );
+    }
+
+    private void SpawnProductItem()
+    {
+        if (AnimalData?.productItem?.prefab == null) return;
+
+        Vector3 origin = transform.position;
+        for (int i = 0; i < AnimalData.productAmount; i++)
+        {
+            Vector3 scatter = new Vector3(
+                Random.Range(-0.6f, 0.6f),
+                Random.Range(-0.6f, 0.6f),
+                0f
+            );
+            Transform spawned = Instantiate(
+                AnimalData.productItem.prefab, origin, Quaternion.identity
+            );
+            if (spawned.TryGetComponent<ItemBounceObject>(out var bounce))
+                bounce.StartBounce(origin, origin + scatter);
+        }
     }
 }

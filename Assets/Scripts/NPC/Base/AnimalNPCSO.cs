@@ -16,4 +16,14 @@ public class AnimalNPCSO : ScriptableObject
     [Header("Idle")]
     public float idleTimeMin = 2f;
     public float idleTimeMax = 5f;
+
+    [Header("Item Production")]
+    [Tooltip("Item sẽ được spawn ra theo thời gian. Để trống = không sản xuất.")]
+    public ItemSO productItem;
+    [Tooltip("Số lượng item mỗi lần spawn.")]
+    public int    productAmount         = 1;
+    [Tooltip("Số giờ in-game tối thiểu giữa mỗi lần sản xuất.")]
+    public float  productionHoursMin    = 8f;
+    [Tooltip("Số giờ in-game tối đa giữa mỗi lần sản xuất.")]
+    public float  productionHoursMax    = 12f;
 }
