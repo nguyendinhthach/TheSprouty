@@ -67,8 +67,8 @@ public class InventoryManager : MonoBehaviour
         {
             if (!slot.IsEmpty && slot.GetItemSO() == itemSO)
             {
-                int remainingQuantity = slot.AddQuantity(-quantity);
-                if (remainingQuantity <= 0)
+                slot.AddQuantity(-quantity);
+                if (slot.IsEmpty)
                 {
                     slot.ClearSlot();
                 }

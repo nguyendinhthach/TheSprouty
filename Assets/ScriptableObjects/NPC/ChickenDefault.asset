@@ -17,6 +17,8 @@ MonoBehaviour:
   wanderRadiusMax: 4
   idleTimeMin: 2
   idleTimeMax: 5
+  feedItem: {fileID: 11400000, guid: 9edaf2d7a43f38840a079e98cd439511, type: 2}
+  feedAmount: 1
   productItem: {fileID: 11400000, guid: 138872cee9e35034faf19287c17a4114, type: 2}
   productAmount: 1
   productionHoursMin: 20

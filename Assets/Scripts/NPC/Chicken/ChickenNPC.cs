@@ -1,11 +1,11 @@
 // ──────────────────────────────────────────────
 // TheSprouty | NPC/Chicken/ChickenNPC.cs
 // Concrete chicken NPC. Wires all states, handles
-// IInteractable and player-tool interaction logic.
+// IInteractable (indicator hover) and IUsable (feeding interaction).
 // ──────────────────────────────────────────────
 using UnityEngine;
 
-public class ChickenNPC : BaseAnimalNPC, IInteractable
+public class ChickenNPC : BaseAnimalNPC, IInteractable, IUsable
 {
     // ----------------------------------------------------------
     // Serialized fields
@@ -93,7 +93,6 @@ public class ChickenNPC : BaseAnimalNPC, IInteractable
     // Private state
     // ----------------------------------------------------------
     private ChickenAnimator _chickenAnimator;
-    private float           _happyCooldownTimer;
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -109,13 +108,6 @@ public class ChickenNPC : BaseAnimalNPC, IInteractable
         base.Start(); // InitializeStates() được gọi trong base coroutine
         if (Player.Instance != null)
             Player.Instance.OnToolUsed += OnPlayerUsedTool;
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-        if (_happyCooldownTimer > 0f)
-            _happyCooldownTimer -= Time.deltaTime;
     }
 
     protected override void OnDestroy()
@@ -146,6 +138,12 @@ public class ChickenNPC : BaseAnimalNPC, IInteractable
         StateMachine.Initialize(IdleState);
     }
 
+    /// <summary>Trigger HappyState when the player successfully feeds this chicken.</summary>
+    protected override void OnFedSuccessfully()
+    {
+        StateMachine.ChangeState(HappyState);
+    }
+
     // ----------------------------------------------------------
     // Public API
     // ----------------------------------------------------------
@@ -163,25 +161,53 @@ public class ChickenNPC : BaseAnimalNPC, IInteractable
     public void OnIndicatorExit()  => IsTargetedByIndicator = false;
 
     // ----------------------------------------------------------
+    // IUsable
+    // ----------------------------------------------------------
+
+    /// <summary>
+    /// Called by Player.PerformToolAction when ToolType.None and indicator is on this chicken.
+    /// Checks inventory for feedItem, consumes it, and triggers HappyState via OnFedSuccessfully().
+    /// </summary>
+    public void Use()
+    {
+        FeedResult result = TryFeed();
+
+        switch (result)
+        {
+            case FeedResult.Success:
+                // OnFedSuccessfully() đã được gọi bên trong TryFeed()
+                break;
+
+            case FeedResult.AlreadyFed:
+                NotificationManager.Instance?.ShowMessage("Already fed today!");
+                break;
+
+            case FeedResult.InsufficientFeed:
+                string itemName = AnimalData?.feedItem?.itemName ?? "feed";
+                NotificationManager.Instance?.ShowMessage($"Need {itemName}!");
+                break;
+
+            case FeedResult.NoFeedConfigured:
+                // Silent fail — feedItem chưa được config trong Inspector
+                break;
+        }
+    }
+
+    // ----------------------------------------------------------
     // Private event handlers
     // ----------------------------------------------------------
+
+    /// <summary>
+    /// Listens for tool usage events to trigger Flee when player uses a tool nearby.
+    /// Happy/feeding logic is handled by IUsable.Use() — not here.
+    /// </summary>
     private void OnPlayerUsedTool(object sender, Player.ToolUsedEventArgs e)
     {
+        // Chỉ flee khi player dùng tool (không phải tay không)
+        if (e.ToolType == ToolType.None) return;
+
         float dist = Vector2.Distance(transform.position, Player.Instance.transform.position);
-
-        // Tool equipped + player trong flee radius → flee
-        if (e.ToolType != ToolType.None && dist <= chickenData.fleeRadius)
-        {
+        if (dist <= chickenData.fleeRadius)
             StateMachine.ChangeState(FleeState);
-            return;
-        }
-
-        // Tay không + player trong flee radius + hết cooldown → happy
-        if (e.ToolType == ToolType.None && dist <= chickenData.fleeRadius
-            && _happyCooldownTimer <= 0f)
-        {
-            _happyCooldownTimer = chickenData.happyCooldown;
-            StateMachine.ChangeState(HappyState);
-        }
     }
 }

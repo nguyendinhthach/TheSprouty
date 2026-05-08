@@ -5,7 +5,7 @@
 // ──────────────────────────────────────────────
 using UnityEngine;
 
-public class CowNPC : BaseAnimalNPC, IInteractable
+public class CowNPC : BaseAnimalNPC, IInteractable, IUsable
 {
     // ----------------------------------------------------------
     // Serialized fields
@@ -36,7 +36,6 @@ public class CowNPC : BaseAnimalNPC, IInteractable
     // Private state
     // ----------------------------------------------------------
     private CowAnimator _cowAnimator;
-    private float       _happyCooldownTimer;
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -50,24 +49,6 @@ public class CowNPC : BaseAnimalNPC, IInteractable
     protected override void Start()
     {
         base.Start();
-        if (Player.Instance != null)
-            Player.Instance.OnToolUsed += OnPlayerUsedTool;
-        else
-            Debug.LogWarning("[CowNPC] Player.Instance is null in Start.");
-    }
-
-    protected override void Update()
-    {
-        base.Update();
-        if (_happyCooldownTimer > 0f)
-            _happyCooldownTimer -= Time.deltaTime;
-    }
-
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
-        if (Player.Instance != null)
-            Player.Instance.OnToolUsed -= OnPlayerUsedTool;
     }
 
     // ----------------------------------------------------------
@@ -84,6 +65,12 @@ public class CowNPC : BaseAnimalNPC, IInteractable
         HappyState   = new CowHappyState(this);
 
         StateMachine.Initialize(IdleState);
+    }
+
+    /// <summary>Trigger HappyState when the player successfully feeds this cow.</summary>
+    protected override void OnFedSuccessfully()
+    {
+        StateMachine.ChangeState(HappyState);
     }
 
     // ----------------------------------------------------------
@@ -103,17 +90,35 @@ public class CowNPC : BaseAnimalNPC, IInteractable
     public void OnIndicatorExit()  => IsTargetedByIndicator = false;
 
     // ----------------------------------------------------------
-    // Private event handlers
+    // IUsable
     // ----------------------------------------------------------
-    private void OnPlayerUsedTool(object sender, Player.ToolUsedEventArgs e)
-    {
-        if (e.ToolType != ToolType.None) return;
 
-        float dist = Vector2.Distance(transform.position, Player.Instance.transform.position);
-        if (dist <= cowData.interactRadius && _happyCooldownTimer <= 0f)
+    /// <summary>
+    /// Called by Player.PerformToolAction when ToolType.None and indicator is on this cow.
+    /// Checks inventory for feedItem, consumes it, and triggers HappyState via OnFedSuccessfully().
+    /// </summary>
+    public void Use()
+    {
+        FeedResult result = TryFeed();
+
+        switch (result)
         {
-            _happyCooldownTimer = cowData.happyCooldown;
-            StateMachine.ChangeState(HappyState);
+            case FeedResult.Success:
+                // OnFedSuccessfully() đã được gọi bên trong TryFeed()
+                break;
+
+            case FeedResult.AlreadyFed:
+                NotificationManager.Instance?.ShowMessage("Already fed today!");
+                break;
+
+            case FeedResult.InsufficientFeed:
+                string itemName = AnimalData?.feedItem?.itemName ?? "feed";
+                NotificationManager.Instance?.ShowMessage($"Need {itemName}!");
+                break;
+
+            case FeedResult.NoFeedConfigured:
+                // Silent fail — feedItem chưa được config trong Inspector
+                break;
         }
     }
 }

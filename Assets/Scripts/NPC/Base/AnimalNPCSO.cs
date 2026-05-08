@@ -17,6 +17,12 @@ public class AnimalNPCSO : ScriptableObject
     public float idleTimeMin = 2f;
     public float idleTimeMax = 5f;
 
+    [Header("Feeding")]
+    [Tooltip("Item player cần có trong inventory để feed animal này (ví dụ: Wheat). Để trống = không cần feed.")]
+    public ItemSO feedItem;
+    [Tooltip("Số lượng feedItem tiêu thụ mỗi lần feed.")]
+    public int    feedAmount = 1;
+
     [Header("Item Production")]
     [Tooltip("Item sẽ được spawn ra theo thời gian. Để trống = không sản xuất.")]
     public ItemSO productItem;

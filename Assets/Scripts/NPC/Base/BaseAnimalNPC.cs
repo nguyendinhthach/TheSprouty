@@ -10,6 +10,19 @@ using UnityEngine.AI;
 public abstract class BaseAnimalNPC : MonoBehaviour
 {
     // ----------------------------------------------------------
+    // Nested types
+    // ----------------------------------------------------------
+
+    /// <summary>Result codes returned by TryFeed().</summary>
+    public enum FeedResult
+    {
+        Success,            // Feed thành công
+        AlreadyFed,         // Đã được feed hôm nay rồi
+        InsufficientFeed,   // Không đủ feedItem trong inventory
+        NoFeedConfigured,   // AnimalData.feedItem chưa được set
+    }
+
+    // ----------------------------------------------------------
     // Serialized fields
     // ----------------------------------------------------------
     [SerializeField, HideInInspector] protected AnimalNPCSO animalData;
@@ -25,11 +38,12 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     public NavMeshAgent        Agent       { get; private set; }
     public virtual AnimalNPCSO AnimalData  => animalData;
 
-    // ----------------------------------------------------------
-    // Properties
-    // ----------------------------------------------------------
     public string NPCID                    => npcID;
     public float  ProductionHoursRemaining => _productionHoursRemaining;
+    public bool   CanProduce              => _canProduce;
+
+    /// <summary>True nếu animal đã được feed trong ngày hôm nay.</summary>
+    public bool FedToday => _fedToday;
 
     // ----------------------------------------------------------
     // Private state
@@ -37,6 +51,8 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private Animator       _animator;
     private float          _productionHoursRemaining;
+    private bool           _fedToday;    // chặn feed nhiều lần trong 1 ngày
+    private bool           _canProduce;  // set khi được feed, cleared khi produce xong
 
     /// <summary>
     /// Holds hours loaded from save until ResetProductionTimer() consumes it.
@@ -66,7 +82,7 @@ public abstract class BaseAnimalNPC : MonoBehaviour
 
     protected virtual void OnDestroy()
     {
-        UnsubscribeProduction();
+        UnsubscribeEvents();
     }
 
     protected virtual void Update()
@@ -80,6 +96,16 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     // ----------------------------------------------------------
     /// <summary>Create all states and call StateMachine.Initialize(startState).</summary>
     protected abstract void InitializeStates();
+
+    // ----------------------------------------------------------
+    // Protected hooks
+    // ----------------------------------------------------------
+
+    /// <summary>
+    /// Called by TryFeed() immediately after a successful feed.
+    /// Override to trigger animal-specific happy / eat animations.
+    /// </summary>
+    protected virtual void OnFedSuccessfully() { }
 
     // ----------------------------------------------------------
     // Public API
@@ -114,6 +140,33 @@ public abstract class BaseAnimalNPC : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Attempts to feed this animal using the configured feedItem from the player's inventory.
+    /// Consumes feedAmount items on success and gates production for the rest of the day.
+    /// </summary>
+    /// <returns>FeedResult indicating success or the reason for failure.</returns>
+    public FeedResult TryFeed()
+    {
+        if (_fedToday)
+            return FeedResult.AlreadyFed;
+
+        if (AnimalData?.feedItem == null)
+            return FeedResult.NoFeedConfigured;
+
+        int available = InventoryManager.Instance != null
+            ? InventoryManager.Instance.GetItemQuantity(AnimalData.feedItem)
+            : 0;
+
+        if (available < AnimalData.feedAmount)
+            return FeedResult.InsufficientFeed;
+
+        InventoryManager.Instance.RemoveItem(AnimalData.feedItem, AnimalData.feedAmount);
+        _fedToday    = true;
+        _canProduce  = true;
+        OnFedSuccessfully();
+        return FeedResult.Success;
+    }
+
     // ----------------------------------------------------------
     // Public API — Save/Load
     // ----------------------------------------------------------
@@ -124,10 +177,11 @@ public abstract class BaseAnimalNPC : MonoBehaviour
     /// position is applied immediately, production hours are consumed by
     /// ResetProductionTimer() when the coroutine initializes the agent.
     /// </summary>
-    public void LoadNPCState(Vector3 position, float productionHours)
+    public void LoadNPCState(Vector3 position, float productionHours, bool canProduce)
     {
         transform.position      = position;
         _pendingProductionHours = productionHours;
+        _canProduce             = canProduce;
     }
 
     /// <summary>Safely stop the NavMeshAgent — no-op if not on a NavMesh.</summary>
@@ -180,7 +234,7 @@ public abstract class BaseAnimalNPC : MonoBehaviour
         Agent.Warp(transform.position);
         yield return null;
         InitializeStates();
-        SubscribeProduction();
+        SubscribeEvents();
         ResetProductionTimer();
     }
 
@@ -190,26 +244,44 @@ public abstract class BaseAnimalNPC : MonoBehaviour
             FaceDirection(Agent.velocity);
     }
 
-    private void SubscribeProduction()
+    private void SubscribeEvents()
     {
-        if (AnimalData == null || AnimalData.productItem == null) return;
         if (DayCycleManager.Instance == null) return;
-        DayCycleManager.Instance.OnHourChanged += OnHourChanged;
+
+        // Reset _fedToday mỗi ngày mới — luôn subscribe bất kể có productItem hay không
+        DayCycleManager.Instance.OnDayPassed += HandleDayPassed;
+
+        // Production timer chỉ cần nếu animal có productItem
+        if (AnimalData?.productItem != null)
+            DayCycleManager.Instance.OnHourChanged += OnHourChanged;
     }
 
-    private void UnsubscribeProduction()
+    private void UnsubscribeEvents()
     {
         if (DayCycleManager.Instance == null) return;
+        DayCycleManager.Instance.OnDayPassed   -= HandleDayPassed;
         DayCycleManager.Instance.OnHourChanged -= OnHourChanged;
+    }
+
+    private void HandleDayPassed(object sender, int day)
+    {
+        _fedToday = false;
+        // _canProduce KHÔNG reset ở đây — timer tiếp tục đếm qua đêm
+        // chỉ cleared sau khi SpawnProductItem() chạy xong
     }
 
     private void OnHourChanged(object sender, int hour)
     {
         if (AnimalData == null || AnimalData.productItem == null) return;
+
+        // Timer chỉ đếm nếu đã được feed (kể từ lần produce gần nhất)
+        if (!_canProduce) return;
+
         _productionHoursRemaining--;
         if (_productionHoursRemaining <= 0f)
         {
             SpawnProductItem();
+            _canProduce = false;  // cần feed lại để produce lần tiếp theo
             ResetProductionTimer();
         }
     }

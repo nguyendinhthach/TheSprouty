@@ -353,7 +353,8 @@ public class SaveManager : MonoBehaviour
             {
                 npcID                    = npc.NPCID,
                 position                 = npc.transform.position,
-                productionHoursRemaining = npc.ProductionHoursRemaining
+                productionHoursRemaining = npc.ProductionHoursRemaining,
+                canProduce               = npc.CanProduce
             });
         }
 
@@ -378,7 +379,7 @@ public class SaveManager : MonoBehaviour
                 continue;
             }
 
-            npc.LoadNPCState(saved.position, saved.productionHoursRemaining);
+            npc.LoadNPCState(saved.position, saved.productionHoursRemaining, saved.canProduce);
         }
     }
 

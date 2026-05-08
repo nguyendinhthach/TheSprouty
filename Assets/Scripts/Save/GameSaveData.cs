@@ -135,6 +135,12 @@ public class NPCSaveData
     /// Persisted so the timer doesn't reset to a random value every session.
     /// </summary>
     public float productionHoursRemaining;
+
+    /// <summary>
+    /// True if the animal was fed this production cycle and the timer is actively counting.
+    /// Persisted so the timer resumes correctly after load without requiring a re-feed.
+    /// </summary>
+    public bool canProduce;
 }
 
 // ── World Items (dropped, not yet collected) ──────────────────────────────────
