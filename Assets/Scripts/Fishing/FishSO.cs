@@ -29,9 +29,6 @@ public class FishSO : ItemSO
     [Tooltip("Maximum seconds before the fish bites after reaching the bobber.")]
     [Min(0f)] public float maxBiteDelay = 4f;
 
-    [Tooltip("Chance (0–1) the fish actually bites vs swims away after reaching the bobber.")]
-    [Range(0f, 1f)] public float biteChance = 0.7f;
-
     // ----------------------------------------------------------
     // Helpers
     // ----------------------------------------------------------

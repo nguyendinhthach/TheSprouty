@@ -504,9 +504,10 @@ MonoBehaviour:
   gameInput: {fileID: 2153365797870817182}
   playerIndicator: {fileID: 8818145148435535920}
   waterTilemap: {fileID: 0}
-  testFish: {fileID: 11400000, guid: a6602bc33f8ef2a49ae5641573a0f4f5, type: 2}
-  biteDelay: 3
+  bobberPrefab: {fileID: 9200271106939512508, guid: fa0bd83b9bfde9e47a4d58a4a4add04e, type: 3}
   nibbleWindowDuration: 1.5
+  minReelDuration: 2
+  maxReelDuration: 5
 --- !u!1 &4873472388753681350
 GameObject:
   m_ObjectHideFlags: 0

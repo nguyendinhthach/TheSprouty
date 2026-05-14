@@ -18,6 +18,5 @@ MonoBehaviour:
   maxStackSize: 50
   rarity: 0
   sellPrice: 10
-  minBiteDelay: 1
+  minBiteDelay: 2
   maxBiteDelay: 4
-  biteChance: 0.7

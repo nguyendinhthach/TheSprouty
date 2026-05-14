@@ -16,5 +16,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   prefab: {fileID: 0}
   toolType: 4
-  interactRange: 3
+  interactRange: 4
   power: 10

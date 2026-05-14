@@ -11,8 +11,9 @@ public class PlayerAnimator : MonoBehaviour
     private const string PARAM_SPEED = "Speed";
     private const string PARAM_TOOL_TYPE = "ToolType";
     private const string PARAM_DO_ACTION = "DoAction";
-    private const string PARAM_FISHING_REEL      = "Fishing_Reel";
-    private const string PARAM_FISHING_EXIT      = "Fishing_Exit";
+    private const string PARAM_FISHING_REEL        = "Fishing_Reel";
+    private const string PARAM_FISHING_CATCH       = "Fishing_Catch";
+    private const string PARAM_FISHING_EXIT        = "Fishing_Exit";
     private const string PARAM_IS_FISHING_ON_WATER = "IsFishingOnWater";
 
     // Player body offset so direction is calculated from chest,
@@ -195,8 +196,11 @@ public class PlayerAnimator : MonoBehaviour
         player.UnlockAction();
     }
 
-    /// <summary>Triggers the Fishing_Reel animator parameter (correct timing catch).</summary>
+    /// <summary>Triggers the Fishing_Reel animator parameter.</summary>
     public void TriggerFishingReel() => _animator.SetTrigger(PARAM_FISHING_REEL);
+
+    /// <summary>Triggers the Fishing_Catch animator parameter after reel loops complete.</summary>
+    public void TriggerFishingCatch() => _animator.SetTrigger(PARAM_FISHING_CATCH);
 
     /// <summary>Triggers the Fishing_Exit animator parameter (cancel or miss).</summary>
     public void TriggerFishingExit() => _animator.SetTrigger(PARAM_FISHING_EXIT);

@@ -25,12 +25,13 @@ public class FishingController : MonoBehaviour
     [SerializeField] private PlayerIndicator playerIndicator;
     [SerializeField] private Tilemap waterTilemap;
 
-    [Header("Fish")]
-    [SerializeField] private FishSO testFish;
+    [Header("Bobber")]
+    [SerializeField] private GameObject bobberPrefab;
 
     [Header("Timing (seconds)")]
-    [SerializeField] private float biteDelay = 3f;
     [SerializeField] private float nibbleWindowDuration = 1.5f;
+    [SerializeField] private float minReelDuration = 1f;
+    [SerializeField] private float maxReelDuration = 3f;
 
     // ----------------------------------------------------------
     // Private state
@@ -39,6 +40,10 @@ public class FishingController : MonoBehaviour
     private FishingState _state = FishingState.Inactive;
     private Coroutine _activeRoutine;
     private bool _isOnWater;
+    private BobberAnimator _activeBobber;
+    private GameObject _activeBobberGO;
+    private FishSO _caughtFish;
+    private FishShadow _activeShadow;
 
     // ----------------------------------------------------------
     // Properties
@@ -74,7 +79,7 @@ public class FishingController : MonoBehaviour
     }
 
     // ----------------------------------------------------------
-    // Public API  (called by PlayerAnimator animation events)
+    // Public API
     // ----------------------------------------------------------
 
     /// <summary>Called by PlayerAnimator when FishingRod tool is used — cast animation starts.</summary>
@@ -98,8 +103,7 @@ public class FishingController : MonoBehaviour
         }
 
         _state = FishingState.WaitingForBite;
-        Debug.Log("[Fishing] Cast complete — waiting for bite.");
-        _activeRoutine = StartCoroutine(BiteRoutine());
+        SpawnBobber();
     }
 
     /// <summary>Called by AnimationEvent_FishingComplete on last frame of Fishing_Happy.</summary>
@@ -108,6 +112,18 @@ public class FishingController : MonoBehaviour
         _state = FishingState.Inactive;
         playerIndicator.gameObject.SetActive(true);
         _player.UnlockAction();
+    }
+
+    /// <summary>Called by SpawnFishManager when a shadow reaches the bobber.</summary>
+    public void TriggerBite(FishShadow shadow)
+    {
+        if (_state != FishingState.WaitingForBite) return;
+
+        _activeShadow  = shadow;
+        _caughtFish    = shadow.SelectedFish;
+        _state         = FishingState.NibbleWindow;
+        _activeBobber?.PlayBitten();
+        _activeRoutine = StartCoroutine(NibbleWindowRoutine());
     }
 
     // ----------------------------------------------------------
@@ -121,44 +137,61 @@ public class FishingController : MonoBehaviour
         CatchFish();
     }
 
-    private IEnumerator BiteRoutine()
-    {
-        yield return new WaitForSeconds(biteDelay);
-
-        _state = FishingState.NibbleWindow;
-        Debug.Log("[Fishing] Fish is biting! Press LMB!");
-
-        _activeRoutine = StartCoroutine(NibbleWindowRoutine());
-    }
-
     private IEnumerator NibbleWindowRoutine()
     {
         yield return new WaitForSeconds(nibbleWindowDuration);
 
-        Debug.Log("[Fishing] Fish got away.");
+        _activeBobber?.ResetToIdle();
         _state = FishingState.WaitingForBite;
+        SpawnFishManager.Instance?.RemoveShadow(_activeShadow);
+        _activeShadow = null;
     }
 
     private void CatchFish()
     {
         _state = FishingState.Reeling;
+        DespawnBobber();
         playerIndicator.gameObject.SetActive(false);
         playerAnimator.TriggerFishingReel();
+        _activeRoutine = StartCoroutine(ReelLoopRoutine());
+    }
 
-        if (testFish != null && InventoryManager.Instance != null)
-        {
-            bool added = InventoryManager.Instance.AddItem(testFish, 1);
-            Debug.Log(added
-                ? $"[Fishing] Caught {testFish.itemName}!"
-                : $"[Fishing] Caught {testFish.itemName} but inventory is full!");
-        }
+    private IEnumerator ReelLoopRoutine()
+    {
+        float duration = UnityEngine.Random.Range(minReelDuration, maxReelDuration);
+        yield return new WaitForSeconds(duration);
+
+        playerAnimator.TriggerFishingCatch();
+
+        if (_caughtFish != null && InventoryManager.Instance != null)
+            InventoryManager.Instance.AddItem(_caughtFish, 1);
+
+        SpawnFishManager.Instance?.RemoveShadow(_activeShadow);
+        _activeShadow = null;
+        _caughtFish   = null;
     }
 
     private void ExitFishing()
     {
+        DespawnBobber();
         playerAnimator.TriggerFishingExit();
         _player.UnlockAction();
         StartCoroutine(SetInactiveNextFrameRoutine());
+    }
+
+    private void SpawnBobber()
+    {
+        if (bobberPrefab == null) return;
+        _activeBobberGO = Instantiate(bobberPrefab, playerIndicator.transform.position, Quaternion.identity);
+        _activeBobber   = _activeBobberGO.GetComponentInChildren<BobberAnimator>();
+    }
+
+    private void DespawnBobber()
+    {
+        if (_activeBobberGO == null) return;
+        Destroy(_activeBobberGO);
+        _activeBobberGO = null;
+        _activeBobber   = null;
     }
 
     private IEnumerator SetInactiveNextFrameRoutine()

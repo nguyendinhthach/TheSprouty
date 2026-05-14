@@ -1,8 +1,7 @@
 // ──────────────────────────────────────────────
 // TheSprouty | Fishing/SpawnFishManager.cs
-// Singleton. Finds all FishSpawnZones in the scene,
-// spawns FishShadow prefabs up to maxFishCount per zone,
-// and respawns after a delay when a shadow is destroyed.
+// Singleton. Manages FishShadow spawning across all FishSpawnZones.
+// Relays FishShadow.OnReachedBobber → FishingController.TriggerBite().
 // ──────────────────────────────────────────────
 using System.Collections;
 using System.Collections.Generic;
@@ -18,8 +17,11 @@ public class SpawnFishManager : MonoBehaviour
     // ----------------------------------------------------------
     // Serialized fields
     // ----------------------------------------------------------
+    [Header("References")]
+    [SerializeField] private FishingController fishingController;
+
     [Header("Settings")]
-    [Tooltip("Seconds before a new shadow spawns after one is destroyed.")]
+    [Tooltip("Seconds before a new shadow spawns after one is removed.")]
     [SerializeField] private float respawnDelay = 10f;
 
     // ----------------------------------------------------------
@@ -27,6 +29,7 @@ public class SpawnFishManager : MonoBehaviour
     // ----------------------------------------------------------
     private FishSpawnZone[] _zones;
     private readonly Dictionary<FishSpawnZone, List<FishShadow>> _activeShadows = new();
+    private readonly Dictionary<FishShadow, FishSpawnZone> _shadowToZone = new();
 
     // ----------------------------------------------------------
     // Unity lifecycle
@@ -52,12 +55,13 @@ public class SpawnFishManager : MonoBehaviour
     // Public API
     // ----------------------------------------------------------
 
-    /// <summary>Called when a FishShadow is caught — removes it and schedules respawn.</summary>
-    public void OnShadowRemoved(FishShadow shadow, FishSpawnZone zone)
+    /// <summary>Destroys shadow and schedules respawn. Called after catch or miss.</summary>
+    public void RemoveShadow(FishShadow shadow)
     {
-        if (_activeShadows.TryGetValue(zone, out List<FishShadow> list))
-            list.Remove(shadow);
+        if (!_shadowToZone.TryGetValue(shadow, out FishSpawnZone zone)) return;
 
+        _activeShadows[zone].Remove(shadow);
+        _shadowToZone.Remove(shadow);
         Destroy(shadow.gameObject);
         StartCoroutine(RespawnRoutine(zone));
     }
@@ -67,9 +71,7 @@ public class SpawnFishManager : MonoBehaviour
     // ----------------------------------------------------------
     private void FillZone(FishSpawnZone zone)
     {
-        int current = _activeShadows[zone].Count;
-        int toSpawn = zone.MaxFishCount - current;
-
+        int toSpawn = zone.MaxFishCount - _activeShadows[zone].Count;
         for (int i = 0; i < toSpawn; i++)
             SpawnOne(zone);
     }
@@ -79,19 +81,25 @@ public class SpawnFishManager : MonoBehaviour
         GameObject prefab = zone.GetRandomShadowPrefab();
         if (prefab == null) return;
 
-        Vector3 spawnPos = zone.GetRandomSpawnPosition();
-        GameObject go    = Instantiate(prefab, spawnPos, Quaternion.identity);
+        Vector3 spawnPos  = zone.GetRandomSpawnPosition();
+        GameObject go     = Instantiate(prefab, spawnPos, Quaternion.identity);
         FishShadow shadow = go.GetComponent<FishShadow>();
-
         if (shadow == null) return;
 
         _activeShadows[zone].Add(shadow);
+        _shadowToZone[shadow] = zone;
+        shadow.OnReachedBobber += OnShadowReachedBobber;
+    }
+
+    private void OnShadowReachedBobber(FishShadow shadow)
+    {
+        shadow.OnReachedBobber -= OnShadowReachedBobber;
+        fishingController?.TriggerBite(shadow);
     }
 
     private IEnumerator RespawnRoutine(FishSpawnZone zone)
     {
         yield return new WaitForSeconds(respawnDelay);
-        if (zone != null)
-            SpawnOne(zone);
+        if (zone != null) SpawnOne(zone);
     }
 }

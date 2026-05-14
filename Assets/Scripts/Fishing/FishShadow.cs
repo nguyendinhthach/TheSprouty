@@ -1,8 +1,8 @@
 // ──────────────────────────────────────────────
 // TheSprouty | Fishing/FishShadow.cs
 // Controls fish shadow behaviour:
-// Idle (animation plays) → Approaching → Nibbling → fires OnReachedBobber.
-// Shadow size determines the fish pool. Rarity determines drop chance within pool.
+// Wander → Bobber detected → fade out → bite delay → fire OnReachedBobber.
+// Shadow stays invisible until SpawnFishManager destroys it after catch/miss.
 // ──────────────────────────────────────────────
 using System;
 using System.Collections;
@@ -14,13 +14,12 @@ public class FishShadow : MonoBehaviour
     // ----------------------------------------------------------
     // State
     // ----------------------------------------------------------
-    private enum FishShadowState { Idle, Approaching, Nibbling }
+    private enum FishShadowState { Wander, Nibbling }
 
     // ----------------------------------------------------------
     // Events
     // ----------------------------------------------------------
-
-    /// <summary>Fired when bite delay completes. FishingManager relays to FishingController.</summary>
+    /// <summary>Fired after bite delay. SpawnFishManager relays to FishingController.</summary>
     public event Action<FishShadow> OnReachedBobber;
 
     // ----------------------------------------------------------
@@ -30,77 +29,53 @@ public class FishShadow : MonoBehaviour
     [SerializeField] private SpriteRenderer visualRenderer;
 
     [Header("Fish Pool")]
-    [Tooltip("Fish that can drop from this shadow size. Rarity determines weight.")]
+    [Tooltip("Fish that can drop from this shadow. Rarity determines weight.")]
     [SerializeField] private FishSO[] possibleFish;
 
-    [Header("Shadow Behaviour")]
-    [Min(0.1f)] public float swimSpeed = 2f;
-
-    [Header("Nibble Settings")]
-    [SerializeField] private float nibbleAmplitude = 0.15f;
-    [SerializeField] private float nibbleFrequency = 2f;
+    [Header("Fade Settings")]
+    [SerializeField] private float fadeDuration = 0.5f;
+    [SerializeField] private float minReactionDelay = 1f;
+    [SerializeField] private float maxReactionDelay = 3f;
 
     // ----------------------------------------------------------
     // Private state
     // ----------------------------------------------------------
-    private FishShadowState _state = FishShadowState.Idle;
-    private Transform _bobber;
+    private FishShadowState _state = FishShadowState.Wander;
     private Coroutine _activeRoutine;
+    private FishSO _selectedFish;
+    private CircleCollider2D _detectionCollider;
 
     // ----------------------------------------------------------
     // Properties
     // ----------------------------------------------------------
-    public bool IsActive => _state != FishShadowState.Idle;
+    public FishSO SelectedFish => _selectedFish;
 
     // ----------------------------------------------------------
     // Unity lifecycle
     // ----------------------------------------------------------
-    private void Start()
+    private void Awake()
     {
-        Debug.Log($"[FishShadow] {gameObject.name} spawned at {transform.position}");
+        _detectionCollider = GetComponent<CircleCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (_state != FishShadowState.Idle) return;
+        if (_state != FishShadowState.Wander) return;
         if (!other.CompareTag("Bobber")) return;
 
-        _bobber = other.transform;
-        EnterState(FishShadowState.Approaching);
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (!other.CompareTag("Bobber")) return;
-
-        // Bobber rời khỏi vùng detection khi đang Idle → không làm gì
-        // Nếu đang Approaching/Nibbling → tiếp tục vì đang trong quá trình rồi
+        _selectedFish = GetRandomFish();
+        EnterNibbling();
     }
 
     // ----------------------------------------------------------
     // Public API
     // ----------------------------------------------------------
 
-    /// <summary>Called by FishingController when bobber spawns on water.</summary>
-    public void SetBobber(Transform bobber)
-    {
-        _bobber = bobber;
-    }
-
-    /// <summary>Called when fishing ends — shadow returns to Idle.</summary>
-    public void ClearBobber()
-    {
-        _bobber = null;
-        if (_state != FishShadowState.Idle)
-            EnterState(FishShadowState.Idle);
-    }
-
-    /// <summary>Returns a random fish from the pool weighted by rarity.</summary>
+    /// <summary>Returns a random fish weighted by rarity.</summary>
     public FishSO GetRandomFish()
     {
         if (possibleFish == null || possibleFish.Length == 0) return null;
 
-        // Build weighted list: Legendary=1, Rare=3, Uncommon=6, Common=10
         List<FishSO> weightedPool = new();
         foreach (FishSO fish in possibleFish)
         {
@@ -123,74 +98,48 @@ public class FishShadow : MonoBehaviour
     }
 
     // ----------------------------------------------------------
-    // Private — state routines
+    // Private methods
     // ----------------------------------------------------------
-    private void EnterState(FishShadowState newState)
+    private void EnterNibbling()
     {
-        _state = newState;
+        _state = FishShadowState.Nibbling;
+        if (_detectionCollider != null) _detectionCollider.enabled = false;
         StopActiveRoutine();
-
-        _activeRoutine = newState switch
-        {
-            FishShadowState.Approaching => StartCoroutine(ApproachRoutine()),
-            FishShadowState.Nibbling    => StartCoroutine(NibbleRoutine()),
-            _                           => null
-        };
+        _activeRoutine = StartCoroutine(FadeAndBiteRoutine());
     }
 
-    private IEnumerator ApproachRoutine()
+    private IEnumerator FadeAndBiteRoutine()
     {
-        while (true)
-        {
-            if (_bobber == null) { EnterState(FishShadowState.Idle); yield break; }
+        // Chờ trước khi phản ứng với bobber
+        float reactionDelay = UnityEngine.Random.Range(minReactionDelay, maxReactionDelay);
+        yield return new WaitForSeconds(reactionDelay);
 
-            transform.position = Vector2.MoveTowards(
-                transform.position, _bobber.position, swimSpeed * Time.deltaTime);
-            FlipToward(_bobber.position);
+        yield return StartCoroutine(FadeRoutine(1f, 0f, fadeDuration));
 
-            if (Vector2.Distance(transform.position, _bobber.position) < 0.15f)
-            {
-                EnterState(FishShadowState.Nibbling);
-                yield break;
-            }
-
-            yield return null;
-        }
-    }
-
-    private IEnumerator NibbleRoutine()
-    {
-        if (_bobber == null) { EnterState(FishShadowState.Idle); yield break; }
-
-        // Pick a fish and use its bite delay
-        FishSO fish    = GetRandomFish();
-        float biteDelay = fish != null ? fish.GetRandomBiteDelay() : 2f;
-        Vector2 basePos = _bobber.position;
-        float timer     = 0f;
-
-        while (timer < biteDelay)
-        {
-            if (_bobber == null) { EnterState(FishShadowState.Idle); yield break; }
-
-            float yOffset = Mathf.Sin(timer * nibbleFrequency * Mathf.PI * 2f) * nibbleAmplitude;
-            transform.position = basePos + new Vector2(0f, yOffset);
-
-            timer += Time.deltaTime;
-            yield return null;
-        }
+        float biteDelay = _selectedFish != null ? _selectedFish.GetRandomBiteDelay() : 2f;
+        yield return new WaitForSeconds(biteDelay);
 
         OnReachedBobber?.Invoke(this);
     }
 
-    // ----------------------------------------------------------
-    // Private helpers
-    // ----------------------------------------------------------
-    private void FlipToward(Vector2 target)
+    private IEnumerator FadeRoutine(float from, float to, float duration)
+    {
+        float timer = 0f;
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            SetAlpha(Mathf.Lerp(from, to, timer / duration));
+            yield return null;
+        }
+        SetAlpha(to);
+    }
+
+    private void SetAlpha(float alpha)
     {
         if (visualRenderer == null) return;
-        float dx = target.x - transform.position.x;
-        if (Mathf.Abs(dx) > 0.01f)
-            visualRenderer.flipX = dx < 0;
+        Color c = visualRenderer.color;
+        c.a = alpha;
+        visualRenderer.color = c;
     }
 
     private void StopActiveRoutine()

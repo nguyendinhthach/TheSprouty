@@ -162,6 +162,7 @@ public class Player : MonoBehaviour
     {
         if (_isPointerOverUI) return;
         if (IsMoving) return;
+        if (_isPerformingAction) return;
         if (fishingController != null && fishingController.IsFishing) return;
 
         OnToolUsed?.Invoke(this, new ToolUsedEventArgs { ToolType = EquippedToolType });
