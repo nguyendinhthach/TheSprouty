@@ -163,7 +163,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishShadow
   visualRenderer: {fileID: 4046674149414638557}
   possibleFish:
-  - {fileID: 11400000, guid: a6602bc33f8ef2a49ae5641573a0f4f5, type: 2}
+  - {fileID: 11400000, guid: 99019316e323b7c4abd1a220f2086777, type: 2}
+  - {fileID: 11400000, guid: 76220660caf712e48aa03ccdae0b136a, type: 2}
+  - {fileID: 11400000, guid: 9090d35006e18214881c209cb98e9bc4, type: 2}
+  - {fileID: 11400000, guid: 68b7a84fc333cdb4d8e8cc4a314791a4, type: 2}
+  - {fileID: 11400000, guid: 7c41f732c7fe9064d8b58662eebb0b4a, type: 2}
+  - {fileID: 11400000, guid: 2a754bb00042bb34c9b0af2f1160c5f8, type: 2}
+  - {fileID: 11400000, guid: bbe8e35d4eb02c844a5b22dfe0f4f357, type: 2}
+  - {fileID: 11400000, guid: 6ec88eadb2af31040b32635df6493edd, type: 2}
+  - {fileID: 11400000, guid: 7d7e78aac8dd45e4f8286511246d2820, type: 2}
+  - {fileID: 11400000, guid: cdb4b923f55fdef4b9779101188bbe88, type: 2}
+  - {fileID: 11400000, guid: cfda71205dfb3ea4d933932770042d85, type: 2}
   fadeDuration: 1
   minReactionDelay: 2
   maxReactionDelay: 3

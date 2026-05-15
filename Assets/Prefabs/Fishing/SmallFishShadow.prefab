@@ -49,9 +49,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishShadow
   visualRenderer: {fileID: 5988988250289011397}
   possibleFish:
-  - {fileID: 11400000, guid: a6602bc33f8ef2a49ae5641573a0f4f5, type: 2}
-  swimSpeed: 2
+  - {fileID: 11400000, guid: b26aefea2dd23774d8827f5ba82dc74e, type: 2}
+  - {fileID: 11400000, guid: 57013d8b86edd7647ad484a3dc537f30, type: 2}
+  - {fileID: 11400000, guid: c69c78492b790c442b5a252a296009f0, type: 2}
+  - {fileID: 11400000, guid: 5a0285c395433214c81ed1b5413c68b3, type: 2}
+  - {fileID: 11400000, guid: 137700ae34411aa49ae650fdeb68b651, type: 2}
+  - {fileID: 11400000, guid: 5a9874b05ec242445be0d175b466d10c, type: 2}
+  - {fileID: 11400000, guid: 02d406181996488408bf216095ba04b3, type: 2}
+  - {fileID: 11400000, guid: 7f092cf19cc72d64d8aaef40a4c9010b, type: 2}
+  - {fileID: 11400000, guid: a69b68d12748601498b9bd8b0d6840c7, type: 2}
+  - {fileID: 11400000, guid: 47ea24451f2f0714ebeb5339b7214a7b, type: 2}
+  - {fileID: 11400000, guid: 685205b875fe0564caeb29ec8144fbae, type: 2}
+  - {fileID: 11400000, guid: 7bb41f1185c9bb14ab24ea313e94c2f9, type: 2}
+  - {fileID: 11400000, guid: 4249305489ebe4241ac8652412526a67, type: 2}
+  - {fileID: 11400000, guid: 7d7e78aac8dd45e4f8286511246d2820, type: 2}
+  - {fileID: 11400000, guid: cdb4b923f55fdef4b9779101188bbe88, type: 2}
+  - {fileID: 11400000, guid: cfda71205dfb3ea4d933932770042d85, type: 2}
   fadeDuration: 1
+  minReactionDelay: 1
+  maxReactionDelay: 3
 --- !u!50 &7596023474894920532
 Rigidbody2D:
   serializedVersion: 5
