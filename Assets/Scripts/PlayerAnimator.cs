@@ -94,6 +94,18 @@ public class PlayerAnimator : MonoBehaviour
         fishingController?.OnCastComplete();
     }
 
+    /// <summary>Called by Animation Event when the caught fish icon should appear.</summary>
+    public void AnimationEvent_ShowCaughtFish()
+    {
+        fishingController?.ShowCaughtFish();
+    }
+
+    /// <summary>Called by Animation Event when the caught fish icon should hide.</summary>
+    public void AnimationEvent_HideCaughtFish()
+    {
+        fishingController?.HideCaughtFish();
+    }
+
     /// <summary>Called by Animation Event on the last frame of Fishing_Happy clip.
     /// Signals FishingController that the full catch sequence has finished.</summary>
     public void AnimationEvent_FishingComplete()

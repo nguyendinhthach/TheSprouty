@@ -28,6 +28,9 @@ public class FishingController : MonoBehaviour
     [Header("Bobber")]
     [SerializeField] private GameObject bobberPrefab;
 
+    [Header("Caught Fish Display")]
+    [SerializeField] private SpriteRenderer caughtFishDisplay;
+
     [Header("Timing (seconds)")]
     [SerializeField] private float nibbleWindowDuration = 1.5f;
     [SerializeField] private float minReelDuration = 1f;
@@ -109,9 +112,25 @@ public class FishingController : MonoBehaviour
     /// <summary>Called by AnimationEvent_FishingComplete on last frame of Fishing_Happy.</summary>
     public void OnFishingComplete()
     {
-        _state = FishingState.Inactive;
+        _state      = FishingState.Inactive;
+        _caughtFish = null;
         playerIndicator.gameObject.SetActive(true);
         _player.UnlockAction();
+    }
+
+    /// <summary>Called by AnimationEvent_ShowCaughtFish — shows caught fish icon.</summary>
+    public void ShowCaughtFish()
+    {
+        if (caughtFishDisplay == null || _caughtFish == null) return;
+        caughtFishDisplay.sprite  = _caughtFish.icon;
+        caughtFishDisplay.enabled = true;
+    }
+
+    /// <summary>Called by AnimationEvent_HideCaughtFish — hides caught fish icon.</summary>
+    public void HideCaughtFish()
+    {
+        if (caughtFishDisplay == null) return;
+        caughtFishDisplay.enabled = false;
     }
 
     /// <summary>Called by SpawnFishManager when a shadow reaches the bobber.</summary>
@@ -150,7 +169,7 @@ public class FishingController : MonoBehaviour
     private void CatchFish()
     {
         _state = FishingState.Reeling;
-        DespawnBobber();
+        _activeBobber?.PlayReel();
         playerIndicator.gameObject.SetActive(false);
         playerAnimator.TriggerFishingReel();
         _activeRoutine = StartCoroutine(ReelLoopRoutine());
@@ -161,6 +180,7 @@ public class FishingController : MonoBehaviour
         float duration = UnityEngine.Random.Range(minReelDuration, maxReelDuration);
         yield return new WaitForSeconds(duration);
 
+        DespawnBobber();
         playerAnimator.TriggerFishingCatch();
 
         if (_caughtFish != null && InventoryManager.Instance != null)
@@ -168,7 +188,7 @@ public class FishingController : MonoBehaviour
 
         SpawnFishManager.Instance?.RemoveShadow(_activeShadow);
         _activeShadow = null;
-        _caughtFish   = null;
+        // _caughtFish cleared in OnFishingComplete sau khi Happy animation xong
     }
 
     private void ExitFishing()

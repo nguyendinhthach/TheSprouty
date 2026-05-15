@@ -11,6 +11,7 @@ public class BobberAnimator : MonoBehaviour
     // ----------------------------------------------------------
     private const string TRIGGER_BITE  = "Bobber_Bite";
     private const string TRIGGER_RESET = "Bobber_Reset";
+    private const string TRIGGER_REEL  = "Bobber_Reel";
 
     // ----------------------------------------------------------
     // Private state
@@ -34,4 +35,7 @@ public class BobberAnimator : MonoBehaviour
 
     /// <summary>Resets to Idle — called when nibble window expires without LMB.</summary>
     public void ResetToIdle() => _animator.SetTrigger(TRIGGER_RESET);
+
+    /// <summary>Plays Reel animation — called when player LMB at right timing.</summary>
+    public void PlayReel() => _animator.SetTrigger(TRIGGER_REEL);
 }
