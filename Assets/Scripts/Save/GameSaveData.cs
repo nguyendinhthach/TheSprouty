@@ -176,4 +176,5 @@ public class GameSaveData
     public List<ResourceNodeSaveData> resourceNodes = new List<ResourceNodeSaveData>();
     public List<NPCSaveData>          npcs          = new List<NPCSaveData>();
     public List<WorldItemSaveData>    worldItems    = new List<WorldItemSaveData>();
+    public int                        gold          = 0;
 }

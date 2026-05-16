@@ -13,11 +13,10 @@ public class FishSO : ItemSO
     // ----------------------------------------------------------
     // Rarity & economy
     // ----------------------------------------------------------
-    [Header("Rarity & Economy")]
+    [Header("Rarity")]
     [Tooltip("Determines drop chance within the shadow's fish pool.")]
     public FishRarity rarity = FishRarity.Common;
-    [Tooltip("Base sell price in gold.")]
-    public int sellPrice = 10;
+    // sellValue inherited from ItemSO
 
     // ----------------------------------------------------------
     // Behaviour

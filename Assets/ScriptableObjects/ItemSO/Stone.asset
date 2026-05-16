@@ -16,3 +16,4 @@ MonoBehaviour:
   icon: {fileID: 4691911435948503463, guid: f8c46a4621c5d8c4eb9cd6c3842de3fe, type: 3}
   prefab: {fileID: 3256699882306034681, guid: b5877c646eec89c4aa20c95a9098680a, type: 3}
   maxStackSize: 99
+  sellValue: 2

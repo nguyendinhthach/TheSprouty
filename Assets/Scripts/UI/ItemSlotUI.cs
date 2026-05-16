@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     [Header("References")]
     [SerializeField] private UnityEngine.UI.Image itemIcon;
@@ -115,6 +115,21 @@ public class ItemSlotUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
         quantityText.text = itemSlot.GetQuantity().ToString();
         quantityText.gameObject.SetActive(itemSlot.GetQuantity() > 1);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        // Ignore click nếu vừa drag xong
+        if (eventData.dragging) return;
+
+        ItemSlot slot = InventoryManager.Instance.GetSlots()[_slotIndex];
+        if (slot.IsEmpty)
+        {
+            ItemActionPanelUI.Instance.Hide();
+            return;
+        }
+
+        ItemActionPanelUI.Instance.Show(GetComponent<RectTransform>(), _slotIndex);
     }
 
     private void RefreshSelf()

@@ -162,6 +162,7 @@ public class SaveManager : MonoBehaviour
         data.resourceNodes = CaptureResourceNodes();
         data.npcs          = CaptureNPCs();
         data.worldItems    = CaptureWorldItems();
+        data.gold          = EconomyManager.Instance.Gold;
 
         return data;
     }
@@ -259,6 +260,7 @@ public class SaveManager : MonoBehaviour
         RestoreResourceNodes(data.resourceNodes);
         RestoreNPCs(data.npcs);
         RestoreWorldItems(data.worldItems);
+        EconomyManager.Instance.LoadGold(data.gold);
     }
 
     private void RestoreTime(TimeSaveData data)
