@@ -61,6 +61,15 @@ public class PlayerIndicator : MonoBehaviour
     }
 
     // ----------------------------------------------------------
+    // Public API
+    // ----------------------------------------------------------
+    /// <summary>Shows the indicator. Call when closing panels that hide it.</summary>
+    public void Show() => gameObject.SetActive(true);
+
+    /// <summary>Hides the indicator. Call when opening panels that obscure it.</summary>
+    public void Hide() => gameObject.SetActive(false);
+
+    // ----------------------------------------------------------
     // Private methods
     // ----------------------------------------------------------
     private void UpdateVisibility()

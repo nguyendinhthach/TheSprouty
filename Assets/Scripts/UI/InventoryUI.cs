@@ -53,15 +53,15 @@ public class InventoryUI : MonoBehaviour
         _isVisible = false;
         IsOpen = false;
         inventoryAnimator.Hide();
-        playerIndicator.gameObject.SetActive(true);
-    }   
-    
+        playerIndicator.Show();
+    }
+
     public void OpenInventory()
     {
         _isVisible = true;
         IsOpen = true;
         inventoryAnimator.Show();
-        playerIndicator.gameObject.SetActive(false);
+        playerIndicator.Hide();
     }
 
     private void InventoryManager_OnInventoryChanged(object sender, EventArgs e)

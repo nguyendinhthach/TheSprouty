@@ -43,12 +43,14 @@ public class Player : MonoBehaviour
     private IInteractable _currentTarget;
     private bool _isPointerOverUI;
     private bool _isPerformingAction;
+    private bool _isInDialogue;
 
     // ----------------------------------------------------------
     // Read-only properties
     // ----------------------------------------------------------
     public bool IsMoving             => _inputVector != Vector2.zero;
     public bool IsPerformingAction   => _isPerformingAction;
+    public bool IsInDialogue         => _isInDialogue;
     public Vector2 InputVector       => _inputVector;
 
     public ToolType EquippedToolType => equippedTool.toolType;
@@ -93,7 +95,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         _isPointerOverUI = EventSystem.current.IsPointerOverGameObject();
-        _inputVector = _isPerformingAction
+        _inputVector = (_isPerformingAction || _isInDialogue)
             ? Vector2.zero
             : gameInput.GetMovementVectorNormalized();
     }
@@ -152,6 +154,12 @@ public class Player : MonoBehaviour
 
     /// <summary>Unlocks movement and indicator. Called by AnimationEvent_ActionComplete.</summary>
     public void UnlockAction() => _isPerformingAction = false;
+
+    /// <summary>Freezes player movement while a dialogue is open.</summary>
+    public void EnterDialogue() => _isInDialogue = true;
+
+    /// <summary>Restores player movement after dialogue closes.</summary>
+    public void ExitDialogue()  => _isInDialogue = false;
 
     
 
